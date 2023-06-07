@@ -7,33 +7,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="/style.css" />
     <title>Mindplex</title>
   </head>
   <body>
     <nav>
       <div class="mindplex__logo">
-        <img src="/public/mindplex-logo.png" alt="Mindplex" />
+        <img src="/mindplex-logo.png" alt="Mindplex" />
       </div>
-      <div class="navbar-center">
+      <div class="navbar_center">
         <a href="#">About</a>
-        <a href="#about">Out Ai</a>
-        <a href="#contact">Mindplex Token</a>
+        <a href="#about">Our Ai</a>
+        <a href="#contact">Mindplex Tokens</a>
         <a href="#contact">team</a>
       </div>
-      <div class="navbar-right">
-        <a href="/login">contact us</a>
-        <a href="/signup">Join Mindplex</a>
+      <div class="navbar_right">
+        <a href="/login" class="navbar_right_contact">contact us</a>
+        <a href="/signup" class="navbar_right_join">Join Mindplex</a>
       </div>
     </nav>
 
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">
-          Blockchain-based Decentralised Media Network
+          Blockchain-based <span>Decentralized</span> Media Network
         </h1>
         <p class="hero__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -41,7 +42,7 @@
           Lectus mauris eros in vitae .
         </p>
         <div class="hero__cta">
-          <button>Join Us</button>
+          <button>Go to website</button>
           <img
             src="path/to/image"
             alt="Image description"
@@ -61,6 +62,7 @@
       <div class="mindplex_section__text">
         <h1>MINDPLEX</h1>
         <h5>WHERE THE FUTURE IS [SUR]REAL</h5>
+        <img src="/line.png" alt=" " class="mindplex_section__line" />
         <p>
           Mindplex is a groundbreaking Al technology proiect that offers a
           comprehensive suite of Al tools and services specitically designed for
@@ -75,14 +77,14 @@
 
     <section class="our_ai_section" id="ourAi">
       <div class="our_ai_section__header">
-        <h2>Our AI</h2>
+        <h1>Our AI</h1>
         <p>Powered Media Solutions.</p>
-        <img src="path/to/image" alt="line" />
+        <img src="/line.png" alt="line" />
       </div>
       <div class="our_ai_section__cards">
         <div class="card">
           <h3>Our Vision</h3>
-          <img src="path/to/image" alt="line" />
+          <img src="/smallLine.png" alt="line" />
           <p>
             At Mindplex, our vision is to address the systemic issues that
             currently plague both traditional and digital media. We firmly
@@ -95,7 +97,8 @@
         </div>
         <div class="card">
           <h3>Revolutionizing Content Creation</h3>
-          <img src="path/to/image" alt="line" />
+          <img src="/smallLine.png" alt="line" />
+
           <p>
             Mindplex operates as both a magazine and a social media platform,
             providing a dynamic and interactive space for creators, influencers,
@@ -108,7 +111,7 @@
         </div>
         <div class="card">
           <h3>Cutting-edge Concepts and Beyond</h3>
-          <img src="path/to/image" alt="Card image description" />
+          <img src="/smallLine.png" alt="line" />
           <p>
             In our pursuit of pushing the boundaries ot media innovation, we
             constantly explore and experiment with cutting-edge concepts. From
@@ -120,7 +123,7 @@
         </div>
         <div class="card">
           <h3>Tackling the Challenges of Generative AI</h3>
-          <img src="path/to/image" alt="Card image description" />
+          <img src="/smallLine.png" alt="line" />
           <p>
             At Mindplex, our vision is to address the systemic issues that
             currently plague both traditional and digital media. We firmly
@@ -133,7 +136,7 @@
         </div>
         <div class="card">
           <h3>Licensing Opportunities</h3>
-          <img src="path/to/image" alt="Card image description" />
+          <img src="/smallLine.png" alt="line" />
           <p>
             We are proud to offer our advanced Al technology for licensing
             subscription to other media entities. Whether vou're a traditional
@@ -144,7 +147,7 @@
         </div>
         <div class="card">
           <h3>Reputation System on Blockchain</h3>
-          <img src="path/to/image" alt="Card image description" />
+          <img src="/smallLine.png" alt="line" />
           <p>
             Integrity and trust are essential in the media landscape. That's why
             we have implemented a reputation system driven by MPXR (our
@@ -163,6 +166,7 @@
         <div class="join_section__content">
           <h2>Mindplexes</h2>
           <p>Join Our Network</p>
+          <img src="/line.png" alt=" " class="mindplex_section__line" />
         </div>
         <div class="join_section__image">
           <p>
@@ -174,7 +178,7 @@
             embark on a transformative journey with Mindplex.
           </p>
         </div>
-        <button>Join Us</button>
+        <button class="join_section_btn">Join Us</button>
       </div>
     </section>
 
@@ -191,7 +195,11 @@
       </div>
       <div class="card_grid_section__cards">
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/utilityIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Utility Token</h3>
           <p>
             MPX token will enable users to order paid content or tip content
@@ -200,7 +208,11 @@
           </p>
         </div>
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/reputationIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Reputation Token</h3>
           <p>
             MPXR token is a soulbound token that can be earned only through
@@ -212,17 +224,29 @@
         </div>
 
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/chainIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Multi Chain Token</h3>
           <p>MPX token works on Cardano and Ethereum chains</p>
         </div>
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/stakingIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Staking</h3>
           <p>anyone can stake MPX and we compensate handsomely</p>
         </div>
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/governanceIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Governacne and Voting</h3>
           <p>
             Mindplex tokenomics is desinged to mitigate the current plague in
@@ -236,7 +260,11 @@
           </p>
         </div>
         <div class="card">
-          <img src="path/to/image" alt="Card image description" />
+          <img
+            src="/ecosystemIcon.png"
+            class="Mindplex_token_image"
+            alt="Card image description"
+          />
           <h3>Ecosystem Airdrops</h3>
           <p>
             Nearly 30% of the MPX token is allocated to build the Mindplex
