@@ -1,0 +1,10 @@
+<div class="card-grid">
+    <slot />
+</div>
+<style>
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(402px, 1fr));
+        gap: 1rem;
+    }
+</style>
