@@ -1,0 +1,142 @@
+---
+import CardLayout from "../../layouts/CardLayout.astro";
+---
+
+<section class="card_grid_section">
+    <div class="card_grid_section__header">
+        <h2>Mindplex Tokens</h2>
+        <p>
+            "Mindplex overates based on a carefully designed tokenomic system
+            involving a liquid cryptographic token (MPX) which is used to
+            incentivize good content and good conduct, and a non-liquid
+            soulbound token, the Mindplex Reputation Token MPXR), which is used
+            to measure and guanitfy the weight of users credibilitv.
+        </p>
+    </div>
+    <CardLayout>
+        <div class="card">
+            <img
+                src="/utilityIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Utility Token</h3>
+            <p>
+                MPX token will enable users to order paid content or tip content
+                creators. It is the key to access our Al services and used as a
+                memebrship bage and voting power in governance procidures,
+            </p>
+        </div>
+        <div class="card">
+            <img
+                src="/reputationIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Reputation Token</h3>
+            <p>
+                MPXR token is a soulbound token that can be earned only through
+                interaction. MPXR is used to measure the reputation of users and
+                content reputation it is a qualty guanother ot interaction, it
+                is the most important weight ot votes, it is alwas locked on the
+                Mindplex Keputation escrow.
+            </p>
+        </div>
+
+        <div class="card">
+            <img
+                src="/chainIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Multi Chain Token</h3>
+            <p>MPX token works on Cardano and Ethereum chains</p>
+        </div>
+        <div class="card">
+            <img
+                src="/stakingIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Staking</h3>
+            <p>anyone can stake MPX and we compensate handsomely</p>
+        </div>
+        <div class="card">
+            <img
+                src="/governanceIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Governacne and Voting</h3>
+            <p>
+                Mindplex tokenomics is desinged to mitigate the current plague
+                in DAOs where the rich bu tokens and win the vote. Here the
+                soulbound token MPXR, is how we guarnatee decentralization. The
+                number of votes a community member has is proportional to tIP,
+                where I is the balance ot MPX tokens weighted by the balance of
+                MPXR after normalization tokens, and fix is a function defined<br
+                />
+                as: f(x) = x,<br />
+                for x : T f(x) = T + sqrt(x-T), for x › T with T = XXX<br />
+            </p>
+        </div>
+        <div class="card">
+            <img
+                src="/ecosystemIcon.png"
+                class="Mindplex_token_image"
+                alt="Card image description"
+            />
+            <h3>Ecosystem Airdrops</h3>
+            <p>
+                Nearly 30% of the MPX token is allocated to build the Mindplex
+                ecosystem rewarding Cotnent creators, Audiences, volunteers,
+                moderators, and media rdlcriels
+            </p>
+        </div>
+    </CardLayout>
+</section>
+<style>
+    .card_grid_section__header h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    .card_grid_section__header p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .card_grid_section__cards .card {
+        background: linear-gradient(
+            180deg,
+            rgba(67, 61, 96, 0.25) 0%,
+            rgba(73, 255, 179, 0.25) 100%
+        );
+        border-radius: 17px;
+        min-height: 388px;
+    }
+
+    .Mindplex_token_image {
+        max-width: 70px;
+        max-height: 53px;
+        align-self: center;
+    }
+
+    .card_grid_section__cards .card {
+        font-size: 20px;
+    }
+
+    .card_grid_section__cards .card h3 {
+        font-weight: 700;
+        font-size: 30px;
+    }
+    @media screen and (min-width: 952px) {
+        .card {
+            width: 450px;
+        }
+    }
+</style>
