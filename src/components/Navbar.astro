@@ -1,6 +1,6 @@
 <nav>
     <div class="mindplex__logo">
-        <img src="/logo.svg" alt="Mindplex" />
+        <img src="/logo.svg" alt="Mindplex" width=" 292" />
     </div>
     <div class="navbar_center">
         <a href="#">About</a>
@@ -23,7 +23,9 @@
         gap: 24px;
         margin: 14px 24px;
     }
-
+    .mindplex__logo img {
+        width: 180px;
+    }
     .navbar_center {
         display: flex;
         justify-content: space-between;
@@ -70,6 +72,23 @@
     @media screen and (min-width: 768px) {
         nav {
             flex-direction: row;
+        }
+        .mindplex__logo img {
+            width: 270px;
+        }
+    }
+    @media screen and (min-width: 952px) {
+        nav,
+        section {
+            margin: 66px 84px;
+        }
+
+        nav {
+            flex-direction: row;
+        }
+
+        .navbar_center {
+            gap: 44px;
         }
     }
 </style>
