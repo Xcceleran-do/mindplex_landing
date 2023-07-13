@@ -1,16 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Card from "../components/_Card.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import Footer from "../components/Footer.astro";
+import Mindplex from "../components/sections/Mindplex.astro";
+import MindplexTokens from "../components/sections/MindplexTokens.astro";
+import Joinus from "../components/sections/Joinus.astro";
+import OurAi from "../components/sections/OurAi.astro";
+import OurTeam from "../components/sections/OurTeam.astro";
 ---
 
 <Layout title="Mindplex">
 	<Navbar />
 	<main>
 		<Hero />
-		<!-- <ul role="list" class="link-card-grid">
+		<Mindplex />
+		<OurAi />
+		<MindplexTokens />
+		<Joinus />
+		<OurTeam />
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 21px;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
+<!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
@@ -32,15 +58,3 @@ import Footer from "../components/Footer.astro";
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul> -->
-		<Footer />
-	</main>
-</Layout>
-
-<style>
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
