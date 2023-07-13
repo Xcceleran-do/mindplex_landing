@@ -1,0 +1,88 @@
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">
+            Blockchain-based <span>Decentralized</span> Media Network
+        </h1>
+        <p class="hero__description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget.
+            Lectus mauris eros in vitae .
+        </p>
+        <div class="hero__cta">
+            <button>Go to website</button>
+            <img
+                src="path/to/image"
+                alt="Image description"
+                class="hero_cta_img"
+            />
+        </div>
+    </div>
+    <div class="hero__image">
+        <img src="path/to/image" alt="Image description" />
+    </div>
+</section>
+<style>
+    .hero {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 14px;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .hero__title {
+        font-weight: 700;
+        /* font-size: 46px; */
+        /* line-height: 56px; */
+        backdrop-filter: blur(10px);
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    .hero__title span {
+        color: #49ffb3;
+    }
+
+    .hero__text {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero__description {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .hero__cta {
+        align-self: center;
+    }
+
+    .hero__cta button {
+        background: #ff8b92;
+        border-radius: 40px;
+        border: none;
+        padding: 4px 23px;
+        color: #343045;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .hero_cta_img {
+        display: none;
+    }
+
+    .hero__image {
+        display: none;
+    }
+</style>
