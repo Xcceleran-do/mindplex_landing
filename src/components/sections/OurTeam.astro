@@ -1,6 +1,11 @@
 <section class="our_team">
     <div class="our_team_text">
-        <h1>Our team</h1>
+        <div class="card_grid_section__header">
+            <img src="/line.svg" alt=" " />
+            <h2>Our team</h2>
+            <img src="/line.svg" alt=" " />
+        </div>
+
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -75,6 +80,38 @@
     </div>
 </section>
 <style>
+    .our_team {
+        margin-top: 103px;
+    }
+    .card_grid_section__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 34px;
+    }
+    .card_grid_section__header img:first-child {
+        transform: rotate(180deg);
+    }
+    .card_grid_section__header img {
+        width: 100%;
+        max-width: 210px;
+    }
+    .card_grid_section__header h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 44px;
+    }
+
+    .card_grid_section__header p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
     .about-team-card-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
