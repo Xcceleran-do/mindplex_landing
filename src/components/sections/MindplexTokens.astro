@@ -3,8 +3,12 @@ import CardLayout from "../../layouts/CardLayout.astro";
 ---
 
 <section class="card_grid_section">
-    <div class="card_grid_section__header">
-        <h2>Mindplex Tokens</h2>
+    <div class="heading_container">
+        <div class="card_grid_section__header">
+            <img src="/line.svg" alt=" " />
+            <h2>Mindplex Tokens</h2>
+            <img src="/line.svg" alt=" " />
+        </div>
         <p>
             "Mindplex overates based on a carefully designed tokenomic system
             involving a liquid cryptographic token (MPX) which is used to
@@ -96,10 +100,29 @@ import CardLayout from "../../layouts/CardLayout.astro";
     </CardLayout>
 </section>
 <style>
+    .heading_container {
+        margin-bottom: 60px;
+    }
+    .card_grid_section__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 34px;
+    }
+    .card_grid_section__header img:first-child {
+        transform: rotate(180deg);
+    }
+    .card_grid_section__header img {
+        width: 100%;
+        max-width: 210px;
+    }
     .card_grid_section__header h2 {
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 36px;
+        font-size: 26px;
         line-height: 44px;
     }
 
@@ -110,7 +133,8 @@ import CardLayout from "../../layouts/CardLayout.astro";
         line-height: 23px;
     }
 
-    .card_grid_section__cards .card {
+    .card {
+        padding: 18px;
         background: linear-gradient(
             180deg,
             rgba(67, 61, 96, 0.25) 0%,
@@ -118,6 +142,8 @@ import CardLayout from "../../layouts/CardLayout.astro";
         );
         border-radius: 17px;
         min-height: 388px;
+        font-size: 20px;
+        width: 100%;
     }
 
     .Mindplex_token_image {
@@ -126,17 +152,13 @@ import CardLayout from "../../layouts/CardLayout.astro";
         align-self: center;
     }
 
-    .card_grid_section__cards .card {
-        font-size: 20px;
-    }
-
-    .card_grid_section__cards .card h3 {
+    .card h3 {
         font-weight: 700;
-        font-size: 30px;
+        font-size: 26px;
     }
     @media screen and (min-width: 952px) {
         .card {
-            width: 450px;
+            /* width: 450px; */
         }
     }
 </style>
