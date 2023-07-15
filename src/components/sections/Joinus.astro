@@ -1,0 +1,104 @@
+<section class="join_section">
+    <div class="join_section__content_wrapper">
+        <div class="top_wrapper">
+            <div class="join_section__content">
+                <h2>Mindplexes</h2>
+                <p>Join Our Network</p>
+                <img src="/line.svg" alt=" " class="mindplex_section__line" />
+            </div>
+            <div class="join_section__text">
+                <p>
+                    Embrace the future of media with Mindolex. Be part of a
+                    vibrant community where creativity knows no bounds. and
+                    innovation takes center stage. logether, lets reshape the
+                    media landscane, unleash the nower of decentralized and
+                    democratic media, and pave the way for a brighter, more
+                    engaging future. Connect with us today and embark on a
+                    transformative journey with Mindplex.
+                </p>
+            </div>
+        </div>
+        <div>
+            <button class="join_section_btn">Join Us</button>
+        </div>
+        <style>
+            .join_section {
+                margin-bottom: 52px;
+            }
+            .join_section__content {
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                gap: 0px 0px;
+                grid-template-areas:
+                    "Title img img"
+                    "Join-us img img"
+                    ". . .";
+            }
+            .join_section__content h2 {
+                font-size: 26px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                grid-area: Title;
+            }
+
+            .join_section__content p {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 300;
+                grid-area: Join-us;
+            }
+
+            .join_section__text p {
+                max-width: 624px;
+                width: 100%;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 23px;
+                text-align: initial;
+            }
+            .mindplex_section__line {
+                grid-area: img;
+                justify-self: center;
+                align-self: center;
+                width: 100%;
+                max-width: 175px;
+            }
+            .join_section__content_wrapper {
+                text-align: center;
+            }
+
+            .join_section_btn {
+                background: #ff8b92;
+                box-shadow: 0px 0px 29px #ff2358;
+                border-radius: 40px;
+                border: none;
+                width: 100%;
+                max-width: 758px;
+                padding: 8px;
+                margin-top: 25px;
+                color: #343045;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 28px;
+            }
+            @media screen and (min-width: 768px) {
+                .top_wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+                }
+                .mindplex_section__line {
+                    max-width: fit-content;
+                }
+                .join_section__content h2 {
+                    font-size: 36px;
+                }
+                .join_section__content p {
+                    font-size: 36px;
+                }
+            }
+        </style>
+    </div>
+</section>

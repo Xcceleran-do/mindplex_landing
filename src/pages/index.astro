@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/_Card.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+import Mindplex from "../components/sections/Mindplex.astro";
+import MindplexTokens from "../components/sections/MindplexTokens.astro";
+import Joinus from "../components/sections/Joinus.astro";
+import OurAi from "../components/sections/OurAi.astro";
+import OurTeam from "../components/sections/OurTeam.astro";
+---
+
+<Layout title="Mindplex">
+	<Navbar />
+	<main>
+		<Hero />
+		<Mindplex />
+		<OurAi />
+		<Joinus />
+		<MindplexTokens />
+		<OurTeam />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		margin: 21px;
+		max-width: 1800px;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+	@media screen and (min-width: 600px) {
+		main {
+			margin: 81px;
+			max-width: 1800px;
+		}
+	}
+</style>
+<!-- <ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+			<Card
+				href="https://astro.build/chat/"
+				title="Community"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul> -->

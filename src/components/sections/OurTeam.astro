@@ -1,0 +1,176 @@
+<section class="our_team">
+    <div class="our_team_text">
+        <div class="card_grid_section__header">
+            <img src="/line.svg" alt=" " />
+            <h2>Our team</h2>
+            <img src="/line.svg" alt=" " />
+        </div>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+        </p>
+    </div>
+    <div class="about-team-card-container">
+        <div class="team-card">
+            <img
+                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/ben.png"
+                class="about-avatar"
+                alt=""
+            />
+            <p class="name">Dr. Ben Goertzel</p>
+            <p class="position">Editor in Chief</p>
+            <div class="social-link">
+                <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/bengoertzel"
+                >
+                    <img
+                        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
+                        alt=""
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img
+                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/amara.png"
+                class="about-avatar"
+                alt=""
+            />
+            <p class="name">Amara Angelica</p>
+            <p class="position">Senior editor</p>
+            <div class="social-link">
+                <a target="_blank" href="https://www.linkedin.com/in/amaraa">
+                    <img
+                        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
+                        alt=""
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img
+                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/lisa.png"
+                class="about-avatar"
+                alt=""
+            />
+            <p class="name">Lisa Rein</p>
+            <p class="position">Editor at large</p>
+            <div class="social-link">
+                <a target="_blank" href="https://www.linkedin.com/in/lisarein">
+                    <img
+                        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
+                        alt=""
+                    />
+                </a>
+            </div>
+        </div>
+        <div class="team-card">
+            <img
+                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/conor.png"
+                class="about-avatar"
+                alt=""
+            />
+            <p class="name">Conor O`Higgins</p>
+            <p class="position">Managing editor</p>
+        </div>
+    </div>
+</section>
+<style>
+    .our_team {
+        margin-top: 103px;
+    }
+    .card_grid_section__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 34px;
+    }
+    .card_grid_section__header img:first-child {
+        transform: rotate(180deg);
+    }
+    .card_grid_section__header img {
+        width: 100%;
+        max-width: 210px;
+    }
+    .card_grid_section__header h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 44px;
+    }
+
+    .card_grid_section__header p {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+    }
+    .about-team-card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 11px;
+        margin-top: 41px;
+    }
+
+    .team-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(
+            180deg,
+            rgba(74, 190, 255, 0.25) 0%,
+            rgba(74, 190, 255, 0) 100%
+        );
+        border-radius: 19px;
+        padding: 31px 14px 14px 11px;
+    }
+
+    .team-card .about-avatar {
+        border-radius: 132px;
+        max-width: 280px;
+        width: 100%;
+        height: 264px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .team-card .name {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 40px;
+        align-self: baseline;
+        margin-left: 17px;
+        margin-top: 24px;
+    }
+
+    .team-card .position {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 39px;
+        align-self: baseline;
+        margin-left: 17px;
+        margin-bottom: 2x;
+    }
+
+    .social-link {
+        align-self: baseline;
+        background: rgba(73, 255, 179, 0.5);
+        border: 1px solid #49ffb3;
+        border-radius: 11px;
+        width: 100%;
+        height: 50px;
+        bottom: 0;
+        position: relative;
+        cursor: pointer;
+        margin: 0 9px;
+    }
+</style>

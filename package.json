@@ -1,31 +1,15 @@
 {
-  "name": "mindplex",
-  "private": true,
-  "version": "0.0.0",
+  "name": "mindplex-landing",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "postcss-custom-media": "^9.1.4",
-    "postcss-custom-properties": "^13.2.0",
-    "postcss-import": "^15.1.0",
-    "postcss-load-config": "^4.0.1",
-    "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^8.4.2",
-    "vite": "^4.3.9"
-  },
-  "postcss": {
-    "parser": "sugarss",
-    "map": false,
-    "plugins": {
-      "postcss-plugin": {}
-    }
-  },
-  "browserslist": [
-    "defaults"
-  ]
+  "dependencies": {
+    "astro": "^2.8.1"
+  }
 }
