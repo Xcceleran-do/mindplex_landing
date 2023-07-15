@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build image
-        run: docker build . -t mindplex_landing:$(date +%s)
+        run: docker build . -t mindplex_landing
 
       - name: run image
-        run: docker run -p 3002:8080 mindplex_landing:$(date +%s)
+        run: docker run -p 3002:8080 mindplex_landing
