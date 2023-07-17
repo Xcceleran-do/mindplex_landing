@@ -24,7 +24,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Utility Token</h3>
+            <h2>Utility Token</h2>
             <p>
                 MPX token will enable users to order paid content or tip content
                 creators. It is the key to access our Al services and used as a
@@ -37,7 +37,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Reputation Token</h3>
+            <h2>Reputation Token</h2>
             <p>
                 MPXR token is a soulbound token that can be earned only through
                 interaction. MPXR is used to measure the reputation of users and
@@ -53,7 +53,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Multi Chain Token</h3>
+            <h2>Multi Chain Token</h2>
             <p>MPX token works on Cardano and Ethereum chains</p>
         </div>
         <div class="card">
@@ -62,7 +62,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Staking</h3>
+            <h2>Staking</h2>
             <p>anyone can stake MPX and we compensate handsomely</p>
         </div>
         <div class="card">
@@ -71,7 +71,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Governacne and Voting</h3>
+            <h2>Governacne and Voting</h2>
             <p>
                 Mindplex tokenomics is desinged to mitigate the current plague
                 in DAOs where the rich bu tokens and win the vote. Here the
@@ -90,7 +90,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
                 class="Mindplex_token_image"
                 alt="Card image description"
             />
-            <h3>Ecosystem Airdrops</h3>
+            <h2>Ecosystem Airdrops</h2>
             <p>
                 Nearly 30% of the MPX token is allocated to build the Mindplex
                 ecosystem rewarding Cotnent creators, Audiences, volunteers,
@@ -134,28 +134,60 @@ import CardLayout from "../../layouts/CardLayout.astro";
     }
 
     .card {
+        border-radius: 17px;
+        min-height: 388px;
+        font-size: 20px;
+        width: 100%;
         padding: 18px;
         background: linear-gradient(
             180deg,
             rgba(67, 61, 96, 0.25) 0%,
             rgba(73, 255, 179, 0.25) 100%
         );
-        border-radius: 17px;
-        min-height: 388px;
-        font-size: 20px;
+        background-size: 400%;
+        border-radius: 0.6rem;
+        background-position: 100%;
+        transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    .card > a {
         width: 100%;
+        text-decoration: none;
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        border-radius: 0.35rem;
+        color: #111;
+        background-color: white;
+        opacity: 0.8;
+    }
+    .card h2 {
+        font-weight: 700;
+        font-size: 26px;
+        margin: 0;
+        font-size: 1.25rem;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    p {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+    .card:is(:hover, :focus-within) {
+        background-position: 0;
+        background-image: var(--accent-gradient);
+    }
+    .card:is(:hover, :focus-within) h2 {
+        color: rgb(var(--accent));
     }
 
     .Mindplex_token_image {
         max-width: 70px;
         max-height: 53px;
         align-self: center;
+        margin-bottom: 10px;
     }
 
-    .card h3 {
-        font-weight: 700;
-        font-size: 26px;
-    }
     @media screen and (min-width: 952px) {
         .card {
             /* width: 450px; */
