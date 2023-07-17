@@ -1,3 +1,7 @@
+---
+import GlowingBtn from "../GlowingBtn.astro";
+---
+
 <section class="join_section">
     <div class="join_section__content_wrapper">
         <div class="top_wrapper">
@@ -19,7 +23,7 @@
             </div>
         </div>
         <div>
-            <button class="join_section_btn">Join Us</button>
+            <GlowingBtn text="Join Us" />
         </div>
         <style>
             .join_section {
@@ -69,20 +73,6 @@
                 text-align: center;
             }
 
-            .join_section_btn {
-                background: #ff8b92;
-                box-shadow: 0px 0px 29px #ff2358;
-                border-radius: 40px;
-                border: none;
-                width: 100%;
-                max-width: 758px;
-                padding: 8px;
-                margin-top: 25px;
-                color: #343045;
-                font-weight: 700;
-                font-size: 16px;
-                line-height: 28px;
-            }
             @media screen and (min-width: 768px) {
                 .top_wrapper {
                     display: flex;

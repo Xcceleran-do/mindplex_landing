@@ -1,0 +1,54 @@
+---
+export interface Props {
+    text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<button class="btn">{text}</button>
+<style>
+    .btn {
+        background: #ff8b92;
+        box-shadow: 0px 0px 10px #ff2358;
+        border-radius: 40px;
+        border: none;
+        width: 100%;
+        max-width: 758px;
+        padding: 8px;
+        margin-top: 25px;
+        color: #343045;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 28px;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+
+    .btn:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #eb737b;
+        box-shadow: 0px 0px 37px #ff2358;
+
+        color: #fff;
+    }
+
+    .btn:hover:before {
+        left: 100%;
+        opacity: 1;
+    }
+</style>
