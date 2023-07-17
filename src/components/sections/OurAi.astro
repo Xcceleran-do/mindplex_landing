@@ -10,7 +10,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
     </div>
     <CardLayout>
         <div class="card">
-            <h3>Our Vision</h3>
+            <h2>Our Vision</h2>
             <img src="/small_line.svg" alt="line" />
             <p>
                 At Mindplex, our vision is to address the systemic issues that
@@ -23,7 +23,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
             </p>
         </div>
         <div class="card">
-            <h3>Revolutionizing Content Creation</h3>
+            <h2>Revolutionizing Content Creation</h2>
             <img src="/small_line.svg" alt="line" />
 
             <p>
@@ -38,7 +38,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
             </p>
         </div>
         <div class="card">
-            <h3>Cutting-edge Concepts and Beyond</h3>
+            <h2>Cutting-edge Concepts and Beyond</h2>
             <img src="/small_line.svg" alt="line" />
             <p>
                 In our pursuit of pushing the boundaries ot media innovation, we
@@ -51,7 +51,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
             </p>
         </div>
         <div class="card">
-            <h3>Tackling the Challenges of Generative AI</h3>
+            <h2>Tackling the Challenges of Generative AI</h2>
             <img src="/small_line.svg" alt="line" />
             <p>
                 At Mindplex, our vision is to address the systemic issues that
@@ -64,7 +64,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
             </p>
         </div>
         <div class="card">
-            <h3>Licensing Opportunities</h3>
+            <h2>Licensing Opportunities</h2>
             <img src="/small_line.svg" alt="line" />
             <p>
                 We are proud to offer our advanced Al technology for licensing
@@ -76,7 +76,7 @@ import CardLayout from "../../layouts/CardLayout.astro";
             </p>
         </div>
         <div class="card">
-            <h3>Reputation System on Blockchain</h3>
+            <h2>Reputation System on Blockchain</h2>
             <img src="/small_line.svg" alt="line" />
             <p>
                 Integrity and trust are essential in the media landscape. That's
@@ -146,15 +146,22 @@ import CardLayout from "../../layouts/CardLayout.astro";
             rgba(67, 61, 96, 0.25) 0%,
             rgba(73, 255, 179, 0.25) 100%
         );
-        border-radius: 40px;
+        border-radius: 0.6rem;
+        background-size: 400%;
+        background-position: 100%;
+        transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1);
     }
 
-    .card h3 {
+    .card h2 {
         font-size: 21px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         text-transform: uppercase;
+        margin: 0;
+        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .card img {
         width: 100%;
@@ -167,8 +174,26 @@ import CardLayout from "../../layouts/CardLayout.astro";
         font-weight: 400;
         font-size: 14px;
         line-height: 25px;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
     }
-
+    .card > a {
+        width: 100%;
+        text-decoration: none;
+        line-height: 1.4;
+        padding: 1rem 1.3rem;
+        border-radius: 0.35rem;
+        color: #111;
+        background-color: white;
+        opacity: 0.8;
+    }
+    .card:is(:hover, :focus-within) {
+        background-position: 0;
+        background-image: var(--accent-gradient);
+    }
+    .card:is(:hover, :focus-within) h2 {
+        color: rgb(var(--accent));
+    }
     @media screen and (min-width: 952px) {
         .our_ai_section__header h1 {
             font-size: 36px;
@@ -188,42 +213,5 @@ import CardLayout from "../../layouts/CardLayout.astro";
             flex-direction: row;
             flex-wrap: wrap;
         }
-    }
-
-    .card {
-        display: flex;
-        background-size: 400%;
-        border-radius: 0.6rem;
-        background-position: 100%;
-        transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    }
-
-    .card > a {
-        width: 100%;
-        text-decoration: none;
-        line-height: 1.4;
-        padding: 1rem 1.3rem;
-        border-radius: 0.35rem;
-        color: #111;
-        background-color: white;
-        opacity: 0.8;
-    }
-    h2 {
-        margin: 0;
-        font-size: 1.25rem;
-        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    p {
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-    }
-    .card:is(:hover, :focus-within) {
-        background-position: 0;
-        background-image: var(--accent-gradient);
-    }
-    .card:is(:hover, :focus-within) h2 {
-        color: rgb(var(--accent));
     }
 </style>
