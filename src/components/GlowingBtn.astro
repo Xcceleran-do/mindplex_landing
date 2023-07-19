@@ -1,12 +1,14 @@
 ---
 export interface Props {
     text: string;
+    href:string
 }
 
-const { text } = Astro.props;
+const { text, href} = Astro.props;
 ---
 
-<button class="btn">{text}</button>
+<a class="btn" href={href}>{text}</a>
+
 <style>
     .btn {
         background: #ff8b92;
@@ -15,8 +17,8 @@ const { text } = Astro.props;
         border: none;
         width: 100%;
         max-width: 758px;
-        padding: 8px;
-        margin-top: 25px;
+        padding: 10px 16px;
+        text-align: center;
         color: #343045;
         font-weight: 700;
         font-size: 16px;

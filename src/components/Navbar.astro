@@ -1,3 +1,6 @@
+---
+import GlowingBtn from "./GlowingBtn.astro";
+---
 <nav>
     <div class="mindplex__logo">
         <a href="/">
@@ -12,7 +15,7 @@
     </div>
     <div class="navbar_right">
         <a href="https://magazine.mindplex.ai/contact-editors" class="navbar_right_contact">contact us</a>
-        <a href="https://magazine.mindplex.ai/?type=register" class="navbar_right_join">Join Mindplex</a>
+        <GlowingBtn text="Join Mindplex" href="https://magazine.mindplex.ai/?type=register" class:list={"margin-top:0"}/>
     </div>
 </nav>
 
@@ -61,6 +64,7 @@
 
     .navbar_right_contact {
         /* padding: 17px 34px; */
+        min-width: 114px;
         padding: 10px 16px;
         outline: 2px solid #fff;
     }
