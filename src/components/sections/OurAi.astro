@@ -1,217 +1,151 @@
 ---
 import CardLayout from "../../layouts/CardLayout.astro";
+const cardContent = await Astro.glob("../../content/ourAi/*.md");
 ---
 
 <section class="our_ai_section" id="ourAi">
-    <div class="our_ai_section__header">
-        <h1>Our AI</h1>
-        <p>Powered Media Solutions.</p>
-        <img src="/line.svg" alt="line" />
-    </div>
-    <CardLayout>
-        <div class="card">
-            <h2>Our Vision</h2>
+  <div class="our_ai_section__header">
+    <h1>Our AI</h1>
+    <p>Powered Media Solutions.</p>
+    <img src="/line.svg" alt="line" />
+  </div>
+  <CardLayout>
+    {
+      cardContent.map((card) => {
+        const { title, description } = card.frontmatter;
+        return (
+          <div class="card">
+            <h2>{title}</h2>
             <img src="/small_line.svg" alt="line" />
-            <p>
-                At Mindplex, our vision is to address the systemic issues that
-                currently plague both traditional and digital media. We firmly
-                believe in the power ot decentralization, democracv, and
-                creatitv in shaping the tuture or media. by leveragme blockcham
-                and Al technologies, we are reshaping the landscape of media,
-                fostering a decentralized ecosystem where transparency,
-                authenticity, and inclusivity thrive.
-            </p>
-        </div>
-        <div class="card">
-            <h2>Revolutionizing Content Creation</h2>
-            <img src="/small_line.svg" alt="line" />
-
-            <p>
-                Mindplex operates as both a magazine and a social media
-                platform, providing a dynamic and interactive space for
-                creators, influencers, and media enthusiasts to connect,
-                collaborate, and share their ideas. Our Al-powered Content
-                Factory facilitate seamless content creation anc curation,
-                enabling members to express their creativity, explore new
-                storytelling techniques, and engage with audiences in innovative
-                ways.
-            </p>
-        </div>
-        <div class="card">
-            <h2>Cutting-edge Concepts and Beyond</h2>
-            <img src="/small_line.svg" alt="line" />
-            <p>
-                In our pursuit of pushing the boundaries ot media innovation, we
-                constantly explore and experiment with cutting-edge concepts.
-                From immersive virtual reality experiences to augmented realitv
-                stortelling, we are dedicated to bringing the future to the
-                present. Our platform serves as a plavground for creators,
-                allowing them to embrace the surrea and omng their wildest
-                imaginations to lite.
-            </p>
-        </div>
-        <div class="card">
-            <h2>Tackling the Challenges of Generative AI</h2>
-            <img src="/small_line.svg" alt="line" />
-            <p>
-                At Mindplex, our vision is to address the systemic issues that
-                currently plague both traditional and digital media. We firmly
-                believe in the power ot decentralization, democracv, and
-                creatitv in shaping the tuture or media. by leveragme blockcham
-                and Al technologies, we are reshaping the landscape of media,
-                fostering a decentralized ecosystem where transparency,
-                authenticity, and inclusivity thrive.
-            </p>
-        </div>
-        <div class="card">
-            <h2>Licensing Opportunities</h2>
-            <img src="/small_line.svg" alt="line" />
-            <p>
-                We are proud to offer our advanced Al technology for licensing
-                subscription to other media entities. Whether vou're a
-                traditional media outlet seeking to enhance your digital
-                presence or a digital media plattorm aiming to incorporate Al
-                capabilities, Mindplex provides customizable solutions tailored
-                to vour specific needs.
-            </p>
-        </div>
-        <div class="card">
-            <h2>Reputation System on Blockchain</h2>
-            <img src="/small_line.svg" alt="line" />
-            <p>
-                Integrity and trust are essential in the media landscape. That's
-                why we have implemented a reputation system driven by MPXR (our
-                soulbound-token on Mindplex. This system rewards users for their
-                contributions, ensuring that quality content rises to the top.
-                By leveraging blockcham technoloev, we establish a transparent
-                and immutable record of revutation. fostemne a communitv-dmven
-                envronment where credibility and expertise are valued.
-            </p>
-        </div>
-    </CardLayout>
+            <p>{description}</p>
+          </div>
+        );
+      })
+    }
+  </CardLayout>
 </section>
 <style>
-    .our_ai_section__header,
-    .card_grid_section__header {
-        text-align: center;
-    }
+  .our_ai_section__header,
+  .card_grid_section__header {
+    text-align: center;
+  }
 
-    .our_ai_section {
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
+  .our_ai_section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
+  .our_ai_section__header h1 {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: initial;
+  }
+
+  .our_ai_section__header p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 44px;
+    text-align: initial;
+  }
+
+  .our_ai_section__header img {
+    width: 25%;
+    text-align: initial;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 25px;
+    display: flex;
+  }
+
+  .our_ai_section__cards,
+  .card_grid_section__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 14px 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+    padding: 46px;
+    background: linear-gradient(
+      180deg,
+      rgba(67, 61, 96, 0.25) 0%,
+      rgba(73, 255, 179, 0.25) 100%
+    );
+    border-radius: 0.6rem;
+    background-size: 400%;
+    background-position: 100%;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h2 {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card img {
+    width: 100%;
+    max-width: 127px;
+    display: flex;
+    margin: 30px auto;
+  }
+  .card p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  .card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: 1rem 1.3rem;
+    border-radius: 0.35rem;
+    color: #111;
+    background-color: white;
+    opacity: 0.8;
+  }
+  .card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
+  .card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent));
+  }
+  @media screen and (min-width: 952px) {
     .our_ai_section__header h1 {
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
-        text-align: initial;
+      font-size: 36px;
+      line-height: 44px;
+      text-transform: uppercase;
+    }
+    .our_ai_section__header {
+      text-align: left;
     }
 
-    .our_ai_section__header p {
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 44px;
-        text-align: initial;
-    }
-
-    .our_ai_section__header img {
-        width: 25%;
-        text-align: initial;
-        margin: auto;
-        margin-left: 0;
-        margin-bottom: 25px;
-        display: flex;
+    .our_ai_section__header {
+      width: 20%;
     }
 
     .our_ai_section__cards,
     .card_grid_section__cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 16px;
-        margin: 14px 0;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        text-align: center;
-        padding: 46px;
-        background: linear-gradient(
-            180deg,
-            rgba(67, 61, 96, 0.25) 0%,
-            rgba(73, 255, 179, 0.25) 100%
-        );
-        border-radius: 0.6rem;
-        background-size: 400%;
-        background-position: 100%;
-        transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-            0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    }
-
-    .card h2 {
-        font-size: 21px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        text-transform: uppercase;
-        margin: 0;
-        transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .card img {
-        width: 100%;
-        max-width: 127px;
-        display: flex;
-        margin: 30px auto;
-    }
-    .card p {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 25px;
-        margin-top: 0.5rem;
-        margin-bottom: 0;
-    }
-    .card > a {
-        width: 100%;
-        text-decoration: none;
-        line-height: 1.4;
-        padding: 1rem 1.3rem;
-        border-radius: 0.35rem;
-        color: #111;
-        background-color: white;
-        opacity: 0.8;
-    }
-    .card:is(:hover, :focus-within) {
-        background-position: 0;
-        background-image: var(--accent-gradient);
-    }
-    .card:is(:hover, :focus-within) h2 {
-        color: rgb(var(--accent));
-    }
-    @media screen and (min-width: 952px) {
-        .our_ai_section__header h1 {
-            font-size: 36px;
-            line-height: 44px;
-            text-transform: uppercase;
-        }
-        .our_ai_section__header {
-            text-align: left;
-        }
-
-        .our_ai_section__header {
-            width: 20%;
-        }
-
-        .our_ai_section__cards,
-        .card_grid_section__cards {
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    }
+  }
 </style>
