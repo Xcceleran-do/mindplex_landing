@@ -3,92 +3,94 @@ import GlowingBtn from "../GlowingBtn.astro";
 ---
 
 <section class="join_section">
-    <div class="join_section__content_wrapper">
-        <div class="top_wrapper">
-            <div class="join_section__content">
-                <h2>Mindplexes</h2>
-                <p>Join Our Network</p>
-                <img src="/line.svg" alt=" " class="mindplex_section__line" />
-            </div>
-            <div class="join_section__text">
-                <p>
-                    Embrace the future of media with Mindolex. Be part of a
-                    vibrant community where creativity knows no bounds. and
-                    innovation takes center stage. logether, lets reshape the
-                    media landscane, unleash the nower of decentralized and
-                    democratic media, and pave the way for a brighter, more
-                    engaging future. Connect with us today and embark on a
-                    transformative journey with Mindplex.
-                </p>
-            </div>
-        </div>
-        <div style="margin-top: 25px;">
-            <GlowingBtn text="Join Us" href="https://magazine.mindplex.ai/?type=register" />
-        </div>
-        <style>
-            .join_section {
-                margin-bottom: 52px;
-            }
-            .join_section__content {
-                display: grid;
-                grid-template-columns: 2fr 1fr 1fr;
-                grid-template-rows: 1fr 1fr 1fr;
-                gap: 0px 0px;
-                grid-template-areas:
-                    "Title img img"
-                    "Join-us img img"
-                    ". . .";
-            }
-            .join_section__content h2 {
-                font-size: 26px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-                grid-area: Title;
-            }
-
-            .join_section__content p {
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 300;
-                grid-area: Join-us;
-            }
-
-            .join_section__text p {
-                max-width: 624px;
-                width: 100%;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 23px;
-                text-align: initial;
-            }
-            .mindplex_section__line {
-                grid-area: img;
-                justify-self: center;
-                align-self: center;
-                width: 100%;
-                max-width: 175px;
-            }
-            .join_section__content_wrapper {
-                text-align: center;
-            }
-
-            @media screen and (min-width: 768px) {
-                .top_wrapper {
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 10px;
-                }
-                .mindplex_section__line {
-                    max-width: fit-content;
-                }
-                .join_section__content h2 {
-                    font-size: 36px;
-                }
-                .join_section__content p {
-                    font-size: 36px;
-                }
-            }
-        </style>
+  <div class="join_section__content_wrapper">
+    <div class="top_wrapper">
+      <div class="join_section__content">
+        <h2>Mindplexes</h2>
+        <p>Join Our Network</p>
+        <img src="/line.svg" alt=" " class="mindplex_section__line" />
+      </div>
+      <div class="join_section__text">
+        <p>
+          Embrace the future of media with Mindolex. Be part of a vibrant
+          community where creativity knows no bounds. and innovation takes
+          center stage. logether, lets reshape the media landscane, unleash the
+          nower of decentralized and democratic media, and pave the way for a
+          brighter, more engaging future. Connect with us today and embark on a
+          transformative journey with Mindplex.
+        </p>
+      </div>
     </div>
+    <div style="margin-top: 25px;">
+      <GlowingBtn
+        text="Join Us"
+        href="https://magazine.mindplex.ai/?type=register"
+      />
+    </div>
+    <style>
+      .join_section {
+        margin-bottom: 52px;
+      }
+      .join_section__content {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+          "Title img img"
+          "Join-us img img"
+          ". . .";
+      }
+      .join_section__content h2 {
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        grid-area: Title;
+      }
+
+      .join_section__content p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        grid-area: Join-us;
+      }
+
+      .join_section__text p {
+        max-width: 624px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        text-align: initial;
+      }
+      .mindplex_section__line {
+        grid-area: img;
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+        max-width: 175px;
+      }
+      .join_section__content_wrapper {
+        text-align: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        .top_wrapper {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+        }
+        .mindplex_section__line {
+          max-width: fit-content;
+        }
+        .join_section__content h2 {
+          font-size: 36px;
+        }
+        .join_section__content p {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </div>
 </section>
