@@ -1,7 +1,7 @@
 ---
-  const teams = await Astro.glob('../../content/team/*.md')
-
+const teams = await Astro.glob("../../content/team/*.md");
 ---
+
 <section class="our_team" id="team">
   <div class="our_team_text">
     <div class="card_grid_section__header">
@@ -20,14 +20,16 @@
   <div class="about-team-card-container">
     {
       teams.map((team) => {
-        const { name, position, imageUrl, linkedin,customImageStyle } = team.frontmatter
-        console.log(customImageStyle)
+        const { name, position, imageUrl, linkedin, customImageStyle } =
+          team.frontmatter;
         return (
           <div class="team-card">
-            <img src={imageUrl} class="about-avatar" 
-            alt={name}
-            style={customImageStyle}
-             />
+            <img
+              src={imageUrl}
+              class="about-avatar"
+              alt={name}
+              style={customImageStyle}
+            />
             <p class="name">{name}</p>
             <p class="position">{position}</p>
             <div class="social-link">
@@ -39,7 +41,7 @@
               </a>
             </div>
           </div>
-        )
+        );
       })
     }
   </div>
