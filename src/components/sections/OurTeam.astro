@@ -1,3 +1,7 @@
+---
+  const teams = await Astro.glob('../../content/team/*.md')
+
+---
 <section class="our_team" id="team">
   <div class="our_team_text">
     <div class="card_grid_section__header">
@@ -14,137 +18,30 @@
     </p>
   </div>
   <div class="about-team-card-container">
-    <div class="team-card">
-      <img
-        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/ben.png"
-        class="about-avatar"
-        alt=""
-      />
-      <p class="name">Dr. Ben Goertzel</p>
-      <p class="position">Editor in Chief</p>
-      <div class="social-link">
-        <a target="_blank" href="https://www.linkedin.com/in/bengoertzel">
-          <img
-            src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-            alt=""
-          />
-        </a>
-      </div>
-    </div>
-    <div class="team-card">
-      <img
-        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/amara.png"
-        class="about-avatar"
-        alt=""
-      />
-      <p class="name">Amara Angelica</p>
-      <p class="position">Senior editor</p>
-      <div class="social-link">
-        <a target="_blank" href="https://www.linkedin.com/in/amaraa">
-          <img
-            src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-            alt=""
-          />
-        </a>
-      </div>
-    </div>
-    <div class="team-card">
-      <img
-        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/lisa.png"
-        class="about-avatar"
-        alt=""
-      />
-      <p class="name">Lisa Rein</p>
-      <p class="position">Editor at large</p>
-      <div class="social-link">
-        <a target="_blank" href="https://www.linkedin.com/in/lisarein">
-          <img
-            src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-            alt=""
-          />
-        </a>
-      </div>
-    </div>
-    <div class="team-card">
-      <img
-        src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/authors/conor.png"
-        class="about-avatar"
-        alt=""
-      />
-      <p class="name">Conor O`Higgins</p>
-      <p class="position">Managing editor</p>
-    </div>
-    <div class="team-card">
-        <img
-          src="https://magazine.mindplex.ai/wp-content/uploads/2023/07/3U0A8942-scaled.jpg"
-          class="about-avatar"
-          style="object-position:top"
-          alt=""
-        />
-        <p class="name">Hruy Tsegaye</p>
-        <p class="position">Chief Executive Officer</p>
-        <div class="social-link">
-            <a target="_blank" href="https://www.linkedin.com/in/hruy-tsegaye">
-              <img
-                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-                alt=""
-              />
-            </a>
+    {
+      teams.map((team) => {
+        const { name, position, imageUrl, linkedin,customImageStyle } = team.frontmatter
+        console.log(customImageStyle)
+        return (
+          <div class="team-card">
+            <img src={imageUrl} class="about-avatar" 
+            alt={name}
+            style={customImageStyle}
+             />
+            <p class="name">{name}</p>
+            <p class="position">{position}</p>
+            <div class="social-link">
+              <a target="_blank" href={linkedin}>
+                <img
+                  src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
+                  alt="Linkedin"
+                />
+              </a>
+            </div>
           </div>
-      </div>
-
-      <div class="team-card">
-        <img
-          src="https://magazine.mindplex.ai/wp-content/uploads/2023/01/aloha_haley.png"
-          class="about-avatar"
-          alt=""
-        />
-        <p class="name">Haley Lowy</p>
-        <p class="position">Chief Marketing Officer</p>
-        <div class="social-link">
-            <a target="_blank" href="https://www.linkedin.com/in/haley-lowy-a32351271/">
-              <img
-                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-                alt=""
-              />
-            </a>
-          </div>
-      </div>
-      <div class="team-card">
-        <img
-          src="/mario.jpeg"
-          class="about-avatar"
-          alt=""
-        />
-        <p class="name" style="font-size: 26px;">Mario Alberto Casiraghi</p>
-        <p class="position">Head of Crypto Operations</p>
-        <div class="social-link">
-            <a target="_blank" href="https://www.linkedin.com/in/macasiraghi/">
-              <img
-                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-                alt=""
-              />
-            </a>
-          </div>
-      </div>
-      <div class="team-card">
-        <img
-          src="/luis.jpeg"
-          class="about-avatar"
-          alt=""
-        />
-        <p class="name">Lewis Farrell</p>
-        <p class="position">Advisor</p>
-        <div class="social-link">
-            <a target="_blank" href="https://www.linkedin.com/in/lewis-e-farrell-b271784/">
-              <img
-                src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
-                alt=""
-              />
-            </a>
-          </div>
-      </div>
-     
+        )
+      })
+    }
   </div>
 </section>
 <style>
