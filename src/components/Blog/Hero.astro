@@ -1,0 +1,144 @@
+---
+import GlowingBtn from "../GlowingBtn.astro";
+---
+
+<section class="hero">
+  <div class="hero__background"></div>
+  <div class="hero__background__decoration"></div>
+  <div class="hero__content">
+    <h1 class="hero__title">Lorem ipsum dolor sit amet</h1>
+    <p class="hero__description">
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum." "Sed ut perspiciatis unde omnis iste natus error sit
+      voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+      ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+      dicta sunt explicabo. Nemo enim ipsam
+    </p>
+    <div class="hero__cta">
+      <GlowingBtn href="https://magazine.mindplex.ai" text="Read more" />
+    </div>
+  </div>
+  <div class="hero__image">
+    <img src="/blog/hero.png" alt="Image description" />
+  </div>
+</section>
+<style>
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 14px;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 745px;
+    text-align: center;
+  }
+  .hero__title {
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .hero__title span {
+    color: #49ffb3;
+  }
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hero__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .hero__cta {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+  }
+  .hero__cta button {
+    background: #ff8b92;
+    border-radius: 40px;
+    border: none;
+    padding: 4px 23px;
+    color: #343045;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    cursor: pointer;
+  }
+  .hero_cta_img {
+    display: none;
+  }
+  .hero__image img {
+    width: 100%;
+    max-width: 270px;
+  }
+  @media screen and (min-width: 790px) {
+    .hero {
+      flex-direction: row;
+    }
+    .hero__image img {
+      max-width: 715px;
+    }
+    .hero_cta_img {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 952px) {
+    .hero__content {
+      text-align: left;
+    }
+    .hero__cta {
+      align-self: baseline;
+    }
+    .hero__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: 715px;
+      max-height: 637px;
+      pointer-events: none;
+    }
+    .hero__title {
+      font-size: 46px;
+      line-height: 56px;
+    }
+    .hero__background {
+      position: absolute;
+      background: url("/hero_ellipse.svg");
+      width: 100%;
+      height: 109%;
+      background-repeat: no-repeat;
+      right: 0;
+      top: -67px;
+      max-width: 797px;
+      z-index: -1;
+    }
+    .hero__background__decoration {
+      position: absolute;
+      background: url("/hero_blurred.svg");
+      width: 100%;
+      height: 115%;
+      background-repeat: no-repeat;
+      right: 30%;
+      top: 40px;
+      max-width: 797px;
+      z-index: -1;
+    }
+  }
+</style>
