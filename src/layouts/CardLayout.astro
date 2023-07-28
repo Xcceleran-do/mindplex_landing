@@ -1,11 +1,20 @@
+---
+export interface Props {
+  gap?: string;
+  width?: string;
+}
+
+const { gap = "1rem", width = "402px" } = Astro.props;
+---
+
 <div class="card-grid">
   <slot />
 </div>
-<style>
+<style define:vars={{ gap, width }}>
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(402px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
+    gap: var(--gap);
   }
   @media screen and (max-width: 768px) {
     .card-grid {
