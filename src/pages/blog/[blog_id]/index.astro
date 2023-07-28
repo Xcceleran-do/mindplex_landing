@@ -1,0 +1,12 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [{ params: { blog_id: "test" } }];
+}
+
+const { blog_id } = Astro.params;
+---
+
+<Layout title={`Hello, ${blog_id}!`}>
+  <div>Good evening, {blog_id}!</div>
+</Layout>
