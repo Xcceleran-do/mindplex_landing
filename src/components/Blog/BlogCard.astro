@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="left">
+    <span>18 hr ago</span>
+    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </div>
+  <img src="/blog/blog_img.png" alt="title" />
+</div>
+<style>
+  .card {
+    display: flex;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(
+      180deg,
+      rgba(67, 61, 96, 0.25) 0%,
+      rgba(73, 255, 179, 0.25) 100%
+    );
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    padding: 26px 13px;
+  }
+  .left span {
+    font-size: 15px;
+    color: var(--gray-6, #f2f2f2);
+  }
+  .left h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .left p {
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: Montserrat;
+    font-weight: 400;
+    color: var(--gray-6, #f2f2f2);
+  }
+</style>
