@@ -1,47 +1,26 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-export function getStaticPaths() {
-  return [{ params: { blog_id: "test" } }];
-}
-
+import GlobalStyles from "./GlobalStyles.astro";
 const { blog_id } = Astro.params;
+const data = await fetch(
+  `https://api.slingacademy.com/v1/sample-data/blog-posts/${blog_id}`
+);
+const { blog } = await data.json();
 ---
 
-<Layout title={`Hello, ${blog_id}!`}>
-  <!-- <div>Good evening, {blog_id}!</div> -->
+<Layout title={`${blog.title}!`}>
+  <GlobalStyles />
   <div class="hero__background"></div>
 
   <div class="blog-content">
-    <h1 class="blog-heading">Lorem ipsum dolor sit amet</h1>
-    <img class="heading-img" src="/blog/blog_img.png" alt="Astro logo" />
-    <div class="blog-content">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p><p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p><p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <img src="/blog/blog_img.png" alt="Astro logo" />
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+    <h1 class="blog-heading">{blog.title}</h1>
+    <div class="social-icons">
+      <img src="/icons/icon-twitter.svg" alt="" />
+      <img src="/icons/icon-linkedin.svg" alt="" />
+      <img src="/icons/icon-facebook.svg" alt="" />
     </div>
+    <img class="heading-img" src={blog.photo_url} alt="" />
+    <div class="blog-content" set:html={blog.content_html} />
   </div>
 </Layout>
 <style>
@@ -55,6 +34,17 @@ const { blog_id } = Astro.params;
     top: -67px;
     max-width: 797px;
     z-index: -1;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0;
   }
   .blog-heading {
     color: var(--gray-6, #f2f2f2);
@@ -71,8 +61,9 @@ const { blog_id } = Astro.params;
     max-height: 347px;
     margin: 0 auto;
     display: block;
+    border-radius: 10px;
   }
-  .blog-content p {
+  /* .blog-content p {
     color: var(--gray-6, #f2f2f2);
     font-family: Montserrat;
     font-size: 21px;
@@ -80,9 +71,9 @@ const { blog_id } = Astro.params;
     font-weight: 400;
     line-height: 31.626px;
   }
-  .blog-content * {
+  .blog-content > * {
     width: 100%;
     max-width: 680px;
     margin: 31.626px auto;
-  }
+  } */
 </style>
