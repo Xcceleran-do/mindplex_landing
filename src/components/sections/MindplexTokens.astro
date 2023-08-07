@@ -41,6 +41,14 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
   .heading_container {
     margin-bottom: 60px;
   }
+
+  .heading_container p{  /*mine*/
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%;
+  }
   .card_grid_section__header {
     display: flex;
     align-items: center;
@@ -60,7 +68,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
   .card_grid_section__header h2 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 36px; /*mine*/
     line-height: 44px;
   }
 
@@ -73,6 +81,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
 
   .card {
     padding: 18px;
+    margin-bottom: 42px;    /*mine */
     background: linear-gradient(
       180deg,
       rgba(67, 61, 96, 0.25) 0%,
