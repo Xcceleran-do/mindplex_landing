@@ -27,7 +27,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
 <style>
   .our_ai_section__header,
   .card_grid_section__header {
-    text-align: center;
+    text-align: center; 
   }
 
   .our_ai_section {
@@ -42,17 +42,18 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     line-height: normal;
     text-transform: uppercase;
     text-align: initial;
+    margin-bottom:15px;
   }
 
   .our_ai_section__header p {
     font-weight: 300;
-    font-size: 16px;
+    font-size: 36px;
     line-height: 44px;
     text-align: initial;
   }
 
   .our_ai_section__header img {
-    width: 25%;
+    width: 210px;
     text-align: initial;
     margin: auto;
     margin-left: 0;
@@ -139,7 +140,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     }
 
     .our_ai_section__header {
-      width: 20%;
+      /* width: 20%; */
     }
 
     .our_ai_section__cards,
