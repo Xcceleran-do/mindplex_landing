@@ -15,7 +15,11 @@ import GlowingBtn from "./GlowingBtn.astro";
       eros in vitae .
     </p>
     <div class="hero__cta">
-      <GlowingBtn href="https://magazine.mindplex.ai" text="Go to website" />
+      <GlowingBtn
+        href="https://magazine.mindplex.ai"
+        text="Go to website"
+        fontSize="23px"
+      />
       <img src="/hero_arrow.svg" alt="Image description" class="hero_cta_img" />
     </div>
   </div>
@@ -56,9 +60,16 @@ import GlowingBtn from "./GlowingBtn.astro";
     gap: 14px;
   }
   .hero__description {
+    color: #fff;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
     font-weight: 400;
+    line-height: normal;
+    /* font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 20px; */
   }
   .hero__cta {
     display: flex;
@@ -94,6 +105,13 @@ import GlowingBtn from "./GlowingBtn.astro";
     .hero_cta_img {
       display: block;
     }
+
+    .hero__description {
+   
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
   }
   @media screen and (min-width: 952px) {
     .hero__content {
