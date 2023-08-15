@@ -23,6 +23,7 @@ const { url, title, image, description } = Astro.props;
     border-radius: 10px;
     max-width: 580px;
     cursor: pointer;
+    width:100%
   }
   .card-img {
     width: 100%;
@@ -51,4 +52,16 @@ const { url, title, image, description } = Astro.props;
     font-weight: 400;
     color: var(--gray-6, #f2f2f2);
   }
+
+  @media screen and (max-width: 768px) {
+   .card{
+    display: flex;
+    flex-direction: column-reverse;
+   }
+   .card-img{
+    max-width:100%
+   }
+
+  }
+
 </style>

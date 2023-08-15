@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Blog/Hero.astro";
 import CardLayout from "../../layouts/CardLayout.astro";
 import BlogCard from "../../components/Blog/BlogCard.astro";
+import ResponsiveCards from "../../layouts/ResponsiveCards.astro";
 const response = await fetch(
   "https://api.slingacademy.com/v1/sample-data/blog-posts"
 );
@@ -11,7 +12,7 @@ const data: any = await response.json();
 
 <Layout title="Blog">
   <Hero />
-  <CardLayout gap="112px" width="580px">
+  <ResponsiveCards gap="112px" width="580px">
     {
       data.blogs.map(
         (item: { title: any; description: any; photo_url: any; id: any }) => {
@@ -26,5 +27,5 @@ const data: any = await response.json();
         }
       )
     }
-  </CardLayout>
+  </ResponsiveCards>
 </Layout>
