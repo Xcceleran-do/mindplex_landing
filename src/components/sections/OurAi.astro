@@ -42,7 +42,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     line-height: normal;
     text-transform: uppercase;
     text-align: initial;
-    margin-bottom:15px;
+    margin-bottom: 15px;
   }
 
   .our_ai_section__header p {
@@ -87,9 +87,9 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -2px rgba(0, 0, 0, 0.1);
-      width: 325px;
-   height: 466px;
-   padding-left: 45px;
+    width: 325px;
+    height: 466px;
+    padding-left: 45px;
     padding-right: 45px;
     padding-bottom: 45px;
   }
@@ -99,7 +99,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    height:46px;
+    height: 46px;
     text-transform: uppercase;
     margin: 0;
     transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -118,7 +118,6 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     line-height: 25px;
     margin-top: 0.5rem;
     margin-bottom: 0;
-    
   }
   .card > a {
     width: 100%;
@@ -133,6 +132,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
   .card:is(:hover, :focus-within) {
     background-position: 0;
     background-image: var(--accent-gradient);
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent));

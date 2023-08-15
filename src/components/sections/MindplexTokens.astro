@@ -69,7 +69,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
   .card_grid_section__header h2 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 26px; 
+    font-size: 26px;
     line-height: 44px;
   }
 
@@ -87,7 +87,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
     padding-right: 42px;
     padding-top: 24px;
     padding-bottom: 21px;
-    margin-bottom: 42px; 
+    margin-bottom: 42px;
     background: linear-gradient(
       180deg,
       rgba(67, 61, 96, 0.25) 0%,
@@ -178,6 +178,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
     .card:is(:hover, :focus-within) {
       background-position: 0;
       background-image: var(--accent-gradient);
+      transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .card:is(:hover, :focus-within) h2 {
       color: rgb(var(--accent));
@@ -190,7 +191,6 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
       margin-bottom: 10px;
     }
     .heading_container p {
-     
       font-family: Montserrat;
       font-size: 23px;
       font-style: normal;
@@ -198,7 +198,7 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
       line-height: 165%;
     }
     .card_grid_section__header h2 {
-      font-size: 36px; 
+      font-size: 36px;
     }
     @media screen and (min-width: 952px) {
       .card {
