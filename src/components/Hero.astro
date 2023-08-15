@@ -51,6 +51,9 @@ import GlowingBtn from "./GlowingBtn.astro";
     font-size: 26px;
     line-height: 36px;
   }
+  .hero__cta:hover .hero_cta_img {
+    transform: translateX(10px);
+  }
   .hero__title span {
     color: #49ffb3;
   }
@@ -76,6 +79,7 @@ import GlowingBtn from "./GlowingBtn.astro";
     align-items: center;
     align-self: center;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
   }
   .hero__cta button {
     background: #ff8b92;
@@ -90,6 +94,7 @@ import GlowingBtn from "./GlowingBtn.astro";
   }
   .hero_cta_img {
     display: none;
+    transition: all 0.3s ease-in-out;
   }
   .hero__image img {
     width: 100%;
@@ -107,11 +112,10 @@ import GlowingBtn from "./GlowingBtn.astro";
     }
 
     .hero__description {
-   
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-  }
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
   @media screen and (min-width: 952px) {
     .hero__content {
