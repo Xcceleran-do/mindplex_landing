@@ -1,0 +1,277 @@
+body{
+    background: #052F46;
+    margin-left:135px;
+    margin-right:135px;
+}
+
+.line{
+    width:100%
+}
+
+.weekly-selection{
+    width:fit-content;
+}
+
+.header h1{
+    color: #49FFB3;
+    font-family: Barlow;
+    font-size: 65px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+}
+
+.header p{
+    color: #FCFCFC;
+font-family: Barlow;
+font-size: 25px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 0px;
+}
+
+.header img{
+    margin-top: 15px;
+}
+
+ h2{
+    color: #49FFB3;
+font-family: Barlow;
+font-size: 45px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+
+}
+
+.cards{
+    display:flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+    gap:30px;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.card{
+    color: #FCFCFC;
+font-family: Barlow;
+display:flex;
+flex-direction: column;
+max-width: 270px;
+
+}
+
+.card img{
+    align-self: center;
+}
+
+.profile-description{
+    display:inline-block;
+    color: #C1C1C1;
+font-family: Barlow Condensed;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left:8px;
+}
+
+.profile img{
+    width: 16px;
+height: 16px;
+}
+
+.card h3{
+    color: #FCFCFC;
+font-family: Barlow;
+font-size: 22px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-top: 0px;
+
+
+}
+
+.description{
+    display:inline-flex;
+    color: #FCFCFC;
+font-family: Barlow;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.views{
+    color:  #C1C1C1;
+font-family: Barlow;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.discover{
+    width:fit-content;
+}
+
+
+.latest-news .cards{
+    width:100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    
+  
+    
+
+}
+
+.latest-news .card{
+    display:flex;
+    flex-direction: row;
+    max-width:100%;
+    
+   
+  
+}
+
+
+
+.blog-description{
+    margin-right:46px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: initial;
+}
+
+.footer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    background: linear-gradient(180deg, #5ABDBD 0%, rgba(71, 136, 124, 0.26) 100%);
+    padding-left:24px;
+    padding-right:9px;
+    margin-top:40px;
+    width:auto;
+    justify-content: center;
+
+}
+
+.newsletter{
+    display:flex;
+    flex-direction: column;
+    width:fit-content;
+    height:288px;
+    margin-top: 52px;
+    
+   
+
+   
+}
+
+.footer .cards{
+    margin-top:12px;
+    margin-right:0px;
+    margin-bottom: 0px;
+    margin-left:2rem;
+    
+}
+
+.footer h2{
+    color: #FCFCFC;
+    font-family: Barlow;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin:0px;
+}
+
+.footer p{
+    width:239px;
+    color:  #FCFCFC;
+font-family: Barlow;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-bottom:21px;
+}
+
+.email-input{
+    width:230px;
+    height:23px;
+    padding: 9px 0px 9px 9px;
+   
+    gap: 10px;
+    border-radius: 3px;
+    background: #929292;
+    margin-bottom:11px;
+    border:none;
+}
+
+.email-input::placeholder{
+color: #787878;
+font-family: Barlow;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.subscribe-button{
+    width:239px;
+padding: 8px 71px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 3px;
+background: #DC8B9A;
+color: white;
+text-align: center;
+font-family: Barlow;
+font-size: 19px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+border:none;
+}
+
+ @media only screen and (max-width: 927px) {
+    body{
+        margin-left: 50px;
+        margin-right:50px;
+    }
+
+   
+    .latest-news .card{
+        display:flex;
+        flex-direction: column-reverse;
+        
+    }
+
+   .latest-news .thumbnail{
+    min-width:50%;
+   
+   }
+
+   
+
+   .latest-news .blog-description{
+    width:80%;
+    align-self: center;
+   }
+
+   .footer{
+    width: fit-content;
+   }
+
+    
+} 
