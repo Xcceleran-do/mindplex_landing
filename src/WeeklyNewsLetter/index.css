@@ -1,3 +1,9 @@
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+} */
 body{
     background: #052F46;
     margin-left:135px;
@@ -5,12 +11,11 @@ body{
 }
 
 .line{
-    width:100%
+    width:100%;
+    margin-top:40px;
 }
 
-.weekly-selection{
-    width:fit-content;
-}
+
 
 .header h1{
     color: #49FFB3;
@@ -49,7 +54,7 @@ line-height: normal;
 .cards{
     display:flex;
     flex-direction: row;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     gap:30px;
     flex-wrap: wrap;
     justify-content: center;
@@ -116,9 +121,7 @@ font-weight: 400;
 line-height: normal;
 }
 
-.discover{
-    width:fit-content;
-}
+
 
 
 .latest-news .cards{
@@ -175,6 +178,38 @@ line-height: normal;
 
    
 }
+
+ .Discover{
+  
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+} 
+
+.more-topics{
+    color: #FCFCFC;
+font-family: Barlow;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+display: inline-flex;
+padding: 8px 10px;
+max-width: 71px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 5px;
+border: 1px solid #FCFCFC;
+margin-top: 48px;
+
+
+
+}
+
+/* .footer .card{
+    max-width: 100%;
+} */
 
 .footer .cards{
     margin-top:12px;
@@ -244,6 +279,11 @@ line-height: normal;
 border:none;
 }
 
+.thumbnail{
+    max-width: 270px;
+    max-height: 160px
+}
+
  @media only screen and (max-width: 927px) {
     body{
         margin-left: 50px;
@@ -271,7 +311,15 @@ border:none;
 
    .footer{
     width: fit-content;
+    padding-left: 0px;
+    margin-left:-30px;
+    margin-right:30px;
+   
+   
+   
+
    }
+
 
     
 } 
