@@ -11,10 +11,11 @@ const teams = await Astro.glob("../../content/team/*.md");
     </div>
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      Mindplex is brought to you by a team of AI experts, Blockchain developers,
+      writers and editors with decades of experience in tech and futurist media.
+      Our team includes Ben Goertzel, chair of Humanity Plus and popularizer of
+      the term "Artificial General Intelligence”; Amara Angelica, former editor
+      of KurzweilAI.
     </p>
   </div>
   <div class="about-team-card-container">
@@ -51,15 +52,13 @@ const teams = await Astro.glob("../../content/team/*.md");
     margin-top: 103px;
   }
 
-  .our_team_text p{  
-    
-    color: #EEE;
-font-family: Barlow;
-font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: 165%;
-   
+  .our_team_text p {
+    color: #eee;
+    font-family: Barlow;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 165%;
   }
 
   .card_grid_section__header {
@@ -109,7 +108,6 @@ line-height: 165%;
     );
     border-radius: 19px;
     padding: 31px 14px 14px 11px;
-    
   }
 
   .team-card .about-avatar {
@@ -122,16 +120,15 @@ line-height: 165%;
   }
 
   .team-card .name {
-    height:80px;
+    height: 80px;
     overflow: clip;
     font-style: normal;
     font-weight: 700;
-    font-size:28px;
+    font-size: 28px;
     line-height: 40px;
     align-self: baseline;
     margin-left: 17px;
     margin-top: 24px;
-    
   }
 
   .team-card .position {
@@ -158,17 +155,11 @@ line-height: 165%;
   }
 
   @media screen and (min-width: 952px) {
-
-    .our_team_text p{   
-    
-  
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 39px; 
+    .our_team_text p {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 39px;
+    }
   }
-
-  }
-
-
 </style>
