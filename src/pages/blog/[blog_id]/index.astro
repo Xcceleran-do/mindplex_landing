@@ -2,6 +2,7 @@
 import Layout from "../../../layouts/Layout.astro";
 import GlobalStyles from "./GlobalStyles.astro";
 const { blog_id } = Astro.params;
+
 const API_URL = `${import.meta.env.API_URL}/blogs/${blog_id}`;
 const response = await fetch(API_URL);
 const { blogs } = await response.json();
@@ -15,14 +16,18 @@ const blog = blogs[0];
   <div class="blog-content">
     <h1 class="blog-heading">{blog.title}</h1>
     <div class="social-icons">
-      <img src="/icons/icon-twitter.svg" alt="" />
+      <!-- <img src="/icons/icon-twitter.svg" alt="" />
       <img src="/icons/icon-linkedin.svg" alt="" />
-      <img src="/icons/icon-facebook.svg" alt="" />
+      <img src="/icons/icon-facebook.svg" alt="" /> -->
     </div>
     <img class="heading-img" src={blog.photo_url} alt="" />
-    <div class="blog-content" set:html={blog.content_html} />
+    <div
+      class="blog-content prose-invert prose-a:text-cyan-700 lg:prose-xl"
+      set:html={blog.description}
+    />
   </div>
 </Layout>
+
 <style>
   .hero__background {
     position: absolute;
@@ -37,7 +42,7 @@ const blog = blogs[0];
   }
   .social-icons {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 10px;
   }
   .social-icons img {
@@ -63,17 +68,4 @@ const blog = blogs[0];
     display: block;
     border-radius: 10px;
   }
-  /* .blog-content p {
-    color: var(--gray-6, #f2f2f2);
-    font-family: Montserrat;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 31.626px;
-  }
-  .blog-content > * {
-    width: 100%;
-    max-width: 680px;
-    margin: 31.626px auto;
-  } */
 </style>
