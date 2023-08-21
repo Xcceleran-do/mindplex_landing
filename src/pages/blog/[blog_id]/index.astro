@@ -2,10 +2,10 @@
 import Layout from "../../../layouts/Layout.astro";
 import GlobalStyles from "./GlobalStyles.astro";
 const { blog_id } = Astro.params;
-const data = await fetch(
-  `https://api.slingacademy.com/v1/sample-data/blog-posts/${blog_id}`
-);
-const { blog } = await data.json();
+const API_URL = `${import.meta.env.API_URL}/blogs/${blog_id}`;
+const response = await fetch(API_URL);
+const { blogs } = await response.json();
+const blog = blogs[0];
 ---
 
 <Layout title={`${blog.title}!`}>
