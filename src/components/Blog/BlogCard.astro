@@ -5,13 +5,16 @@ function cropText(text: string, limit: number) {
   const words = text.split(" ");
   return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
 }
+function stripHtml(dirtyString: string) {
+  return dirtyString.replace(/(<([^>]+)>)/gi, "");
+}
 ---
 
 <a class="card" href=`/blog/${url}`>
   <div class="left">
     <span>18 hr ago</span>
-    <h1>{title}</h1>
-    <p set:html={cropText(description, 20)} />
+    <h1>{cropText(title, 10)}</h1>
+    <div class="">{stripHtml(cropText(description, 10))}</div>
   </div>
   <img class="card-img" src={image} alt="title" />
 </a>
