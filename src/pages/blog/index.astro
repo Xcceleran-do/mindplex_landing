@@ -19,10 +19,18 @@ interface BlogPost {
   photo_url: string;
   post_slug: string;
 }
-
 const API_URL = import.meta.env.API_URL + "/blogs";
-const response = await fetch(API_URL);
-const { blogs }: Blog = await response.json();
+
+const getBlogs = async (): Promise<BlogPost[] | []> => {
+  try {
+    const response = await fetch(API_URL);
+    const { blogs } = await response.json();
+    return blogs;
+  } catch (error) {
+    return [];
+  }
+};
+const blogs = await getBlogs();
 ---
 
 <Layout title="Blog">
