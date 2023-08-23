@@ -1,30 +1,41 @@
 ---
+
 import GlowingBtn from "../GlowingBtn.astro";
+import type {BlogPost} from '../../types/blog'
+const API_URL = `${import.meta.env.API_URL}/blogs/`;
+
+
+const getBlog = async ()=> {
+  try {
+    const response = await fetch(API_URL);
+    const { blogs } = await response.json();
+    const blog:BlogPost = blogs[blogs.length-1];
+    return blog;
+  } catch (error) {
+    return null
+  }
+};
+const blog = await getBlog();
+
+const url= `/blog/${blog?.id}`
+
 ---
+
 
 <section class="hero">
   <div class="hero__background"></div>
   <div class="hero__background__decoration"></div>
   <div class="hero__content">
-    <h1 class="hero__title">Lorem ipsum dolor sit amet</h1>
-    <p class="hero__description">
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum." "Sed ut perspiciatis unde omnis iste natus error sit
-      voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-      ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-      dicta sunt explicabo. Nemo enim ipsam
-    </p>
+    <h1 class="hero__title">{blog?.title}</h1>
+    <p class="hero__description"
+      set:html={blog?.description}
+   />
     <div class="hero__cta">
-      <GlowingBtn href="https://magazine.mindplex.ai" text="Read more" fontSize="30px" />
+      <GlowingBtn href={url} text="Read more" fontSize="30px" />
     </div>
   </div>
   <div class="hero__image">
-    <img src="/blog/hero.png" alt="Image description" />
+    <img src={blog?.photo_url}  alt="Image description" />
   </div>
 </section>
 <style>
@@ -47,10 +58,10 @@ import GlowingBtn from "../GlowingBtn.astro";
   }
   .hero__title {
     font-weight: 700;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     font-size: 26px;
     line-height: 36px;
-    margin-bottom: 77px;  /*mine*/
+    
   }
   .hero__title span {
     color: #49ffb3;
@@ -64,7 +75,7 @@ import GlowingBtn from "../GlowingBtn.astro";
     font-weight: 400;
     font-size: 18px; /*mine*/
     line-height: 20px;
-    margin-bottom: 82px;   /*mine*/
+    margin-bottom: 30px;   /*mine*/
   }
   .hero__cta {
     display: flex;
@@ -92,9 +103,14 @@ import GlowingBtn from "../GlowingBtn.astro";
   }
   @media screen and (min-width: 790px) {
     .hero {
-      flex-direction: row;
-    }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    
+  }
+
     .hero__image img {
+      width:100%;
       max-width: 715px;
     }
     .hero_cta_img {
@@ -102,18 +118,25 @@ import GlowingBtn from "../GlowingBtn.astro";
     }
   }
   @media screen and (min-width: 952px) {
+    
+    .hero{
+      flex-direction:row;
+      margin-bottom:50px;
+    }
     .hero__content {
       text-align: left;
+      background: none;
+      
     }
     .hero__cta {
       align-self: baseline;
     }
     .hero__image {
-      display: block;
+      display: inline-block;
       width: 100%;
       height: 100%;
-      max-width: 715px;
-      max-height: 637px;
+      max-width: 570px;
+      max-height: 570px;
       pointer-events: none;
     }
     .hero__title {
@@ -133,7 +156,7 @@ import GlowingBtn from "../GlowingBtn.astro";
     }
     .hero__background__decoration {
       position: absolute;
-      background: url("/hero_blurred.svg");
+      /* background: url("/hero_blurred.svg"); */
       width: 100%;
       height: 115%;
       background-repeat: no-repeat;

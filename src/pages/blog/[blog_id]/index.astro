@@ -1,29 +1,38 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import GlobalStyles from "./GlobalStyles.astro";
+import type {BlogPost} from '../../../types/blog'
 const { blog_id } = Astro.params;
-
 const API_URL = `${import.meta.env.API_URL}/blogs/${blog_id}`;
-const response = await fetch(API_URL);
-const { blogs } = await response.json();
-const blog = blogs[0];
+
+const getBlog = async ()=> {
+  try {
+    const response = await fetch(API_URL);
+    const { blogs } = await response.json();
+    const blog:BlogPost = blogs[0];
+    return blog 
+  } catch (error) {
+    return null
+  }
+};
+const blog = await getBlog();
 ---
 
-<Layout title={`${blog.title}!`}>
+<Layout title={`${blog?.title}!`}>
   <GlobalStyles />
   <div class="hero__background"></div>
 
   <div class="blog-content">
-    <h1 class="blog-heading">{blog.title}</h1>
+    <h1 class="blog-heading">{blog?.title}</h1>
     <div class="social-icons">
       <!-- <img src="/icons/icon-twitter.svg" alt="" />
       <img src="/icons/icon-linkedin.svg" alt="" />
       <img src="/icons/icon-facebook.svg" alt="" /> -->
     </div>
-    <img class="heading-img" src={blog.photo_url} alt="" />
+    <!-- <img class="heading-img" src={blog.photo_url} alt="" /> -->
     <div
       class="blog-content prose-invert prose-a:text-cyan-700 lg:prose-xl"
-      set:html={blog.description}
+      set:html={blog?.description}
     />
   </div>
 </Layout>
