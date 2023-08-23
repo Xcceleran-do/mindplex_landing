@@ -1,6 +1,6 @@
 ---
-const { url, title, image, description } = Astro.props;
-
+const { url, title, image, description, created_at } = Astro.props;
+import { formatTimeAgo } from "../../utils/fomatAgo";
 function cropText(text: string, limit: number) {
   const words = text.split(" ");
   return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
@@ -12,7 +12,7 @@ function stripHtml(dirtyString: string) {
 
 <a class="card" href=`/blog/${url}`>
   <div class="left">
-    <span>18 hr ago</span>
+    <span>{formatTimeAgo(created_at)}</span>
     <h1>{cropText(title, 10)}</h1>
     <div class="">{stripHtml(cropText(description, 10))}</div>
   </div>
