@@ -1,36 +1,27 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Blog/Hero.astro";
-import CardLayout from "../../layouts/CardLayout.astro";
 import BlogCard from "../../components/Blog/BlogCard.astro";
 import ResponsiveCards from "../../layouts/ResponsiveCards.astro";
 
-interface Blog {
-  success: boolean;
-  message: string;
-  offset: number;
-  limit: number;
-  blogs: BlogPost[];
-}
-interface BlogPost {
-  id: number;
-  title: string;
-  description: string;
-  photo_url: string;
-  post_slug: string;
-}
+import type {BlogPost} from '../../types/blog'
+
 const API_URL = import.meta.env.API_URL + "/blogs";
+
 
 const getBlogs = async (): Promise<BlogPost[] | []> => {
   try {
     const response = await fetch(API_URL);
-    const { blogs } = await response.json();
-    return blogs;
+    const { blogs } = await response.json(); 
+    const dat = blogs.splice(-1) 
+    return blogs
   } catch (error) {
     return [];
   }
 };
+
 const blogs = await getBlogs();
+
 ---
 
 <Layout title="Blog">
