@@ -21,7 +21,7 @@ const teams = await Astro.glob("../../content/team/*.md");
   <div class="about-team-card-container">
     {
       teams.map((team) => {
-        const { name, position, imageUrl, linkedin, customImageStyle } =
+        const { name, position, imageUrl, socialLink, customImageStyle } =
           team.frontmatter;
         return (
           <div class="team-card">
@@ -34,7 +34,7 @@ const teams = await Astro.glob("../../content/team/*.md");
             <p class="name">{name}</p>
             <p class="position">{position}</p>
             <div class="social-link">
-              <a target="_blank" href={linkedin}>
+              <a target="_blank" href={socialLink}>
                 <img
                   src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
                   alt="Linkedin"
