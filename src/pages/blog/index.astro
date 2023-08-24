@@ -4,29 +4,32 @@ import Hero from "../../components/Blog/Hero.astro";
 import BlogCard from "../../components/Blog/BlogCard.astro";
 import ResponsiveCards from "../../layouts/ResponsiveCards.astro";
 
-import type { BlogPost } from "../../types/blog";
+import type { BlogContent } from "../../types/blog";
 
 const API_URL = import.meta.env.API_URL + "/blogs";
 
-const getBlogs = async (): Promise<BlogPost[] | []> => {
+const getBlogs = async () => {
   try {
     const response = await fetch(API_URL);
     const { blogs } = await response.json();
-    const dat = blogs.splice(-1);
-    return blogs;
+    return blogs as BlogContent[];
   } catch (error) {
-    return [];
+    return null;
   }
 };
 
 const blogs = await getBlogs();
+const firstPost = blogs?.slice(-1)[0];
+const blogsWithoutFirstPost = blogs?.filter(
+  (blog) => blog.id !== firstPost?.id
+);
 ---
 
 <Layout title="Blog">
-  <Hero />
+  <Hero {...firstPost} />
   <ResponsiveCards gap="112px" width="580px">
     {
-      blogs.map((blog) => {
+      blogsWithoutFirstPost?.map((blog) => {
         const { description, id, photo_url, title, post_slug, created_at } =
           blog;
         return (

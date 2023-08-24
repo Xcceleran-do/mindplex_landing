@@ -1,35 +1,21 @@
 ---
+const { id, title, description, photo_url } = Astro.props;
 import GlowingBtn from "../GlowingBtn.astro";
-import type { BlogPost } from "../../types/blog";
-const API_URL = `${import.meta.env.API_URL}/blogs/`;
-
-const getBlog = async () => {
-  try {
-    const response = await fetch(API_URL);
-    const { blogs } = await response.json();
-    const blog: BlogPost = blogs[blogs.length - 1];
-    return blog;
-  } catch (error) {
-    return null;
-  }
-};
-const blog = await getBlog();
-
-const url = `/blog/${blog?.id}`;
+const url = `/blog/${id}`;
 ---
 
 <section class="hero">
   <div class="hero__background"></div>
   <div class="hero__background__decoration"></div>
   <div class="hero__content">
-    <h1 class="hero__title">{blog?.title}</h1>
-    <p class="hero__description" set:html={blog?.description} />
+    <h1 class="hero__title">{title}</h1>
+    <p class="hero__description" set:html={description} />
     <div class="hero__cta">
       <GlowingBtn href={url} text="Read more" fontSize="22px" />
     </div>
   </div>
   <div class="hero__image">
-    <img src={blog?.photo_url} alt="Image description" />
+    <img src={photo_url} alt="Image description" />
   </div>
 </section>
 <style>
