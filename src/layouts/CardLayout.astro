@@ -6,14 +6,13 @@ export interface Props {
 
 const { gap = "1rem", width = "402px" } = Astro.props;
 ---
+
 <div class="swiper mySwiper">
   <div class="card-grid swiper-wrapper">
     <slot />
   </div>
-  <div class="swiper-button-next">
-    <img src="/icons/right.svg" alt="line" />
-  </div>
-  <div class="swiper-button-prev"><img src="/icons/left.svg" alt="line" /></div>
+  <div class="swiper-button-next font-light">&gt;</div>
+  <div class="swiper-button-prev font-light">&lt;</div>
 </div>
 
 <style define:vars={{ gap, width }}>
@@ -114,7 +113,10 @@ const { gap = "1rem", width = "402px" } = Astro.props;
   }
 </style>
 
-<script is:inline src="../../node_modules/swiper/swiper-bundle.min.js"></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.js"
+></script>
 
 <script is:inline>
 function activateJavaScriptForScreenSize() {
@@ -143,4 +145,3 @@ window.addEventListener("resize", () => {
 
 checkScreenSize();
 </script>
-
