@@ -27,21 +27,23 @@ const blogsWithoutFirstPost = blogs?.filter(
 
 <Layout title="Blog">
   <Hero {...firstPost} />
-  <ResponsiveCards gap="112px" width="580px">
-    {
-      blogsWithoutFirstPost?.map((blog) => {
-        const { description, id, photo_url, title, post_slug, created_at } =
-          blog;
-        return (
-          <BlogCard
-            title={title}
-            description={description}
-            image={photo_url}
-            url={id}
-            created_at={created_at}
-          />
-        );
-      })
-    }
-  </ResponsiveCards>
+  <div class="pb-4">
+    <ResponsiveCards gap="112px" width="580px">
+      {
+        blogsWithoutFirstPost?.map((blog) => {
+          const { description, id, photo_url, title, post_slug, created_at } =
+            blog;
+          return (
+            <BlogCard
+              title={title}
+              description={description}
+              image={photo_url}
+              url={id}
+              created_at={created_at}
+            />
+          );
+        })
+      }
+    </ResponsiveCards>
+  </div>
 </Layout>
