@@ -1,16 +1,16 @@
 ---
 export interface Props {
   text: string;
-  href: string; 
-  fontSize ?:string;
+  href: string;
+  fontSize?: string;
 }
 
-const { text, href ,fontSize} = Astro.props;
+const { text, href, fontSize } = Astro.props;
 ---
 
 <a class="btn" href={href} target="_blank">{text}</a>
 
-<style   define:vars={{ fontSize }}>
+<style define:vars={{ fontSize }}>
   .btn {
     background: #ff8b92;
     box-shadow: 0px 0px 10px #ff2358;
@@ -21,7 +21,7 @@ const { text, href ,fontSize} = Astro.props;
     padding: 10px 16px;
     text-align: center;
     color: #343045;
-    font-weight: 700;
+    font-weight: 400;
     font-size: var(--fontSize);
     line-height: 28px;
     position: relative;

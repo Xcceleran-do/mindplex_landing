@@ -9,12 +9,14 @@ const url = `/blog/${id}`;
   <div class="hero__background__decoration"></div>
   <div class="hero__content">
     <h1 class="hero__title">{title}</h1>
-    <p class="hero__description" set:html={description} />
+    <div class="hero__description">
+      <p set:html={description} />
+    </div>
     <div class="hero__cta">
-      <GlowingBtn href={url} text="Read more" fontSize="22px" />
+      <GlowingBtn href={url} text="Read more" fontSize="20px" />
     </div>
   </div>
-  <div class="hero__image">
+  <div class="hero__image m-auto md:m-0">
     <img src={photo_url} alt="Image description" />
   </div>
 </section>
@@ -91,6 +93,7 @@ const url = `/blog/${id}`;
     .hero__image img {
       width: 100%;
       max-width: 715px;
+      border-radius: 10px;
     }
     .hero_cta_img {
       display: block;
@@ -112,7 +115,7 @@ const url = `/blog/${id}`;
       display: inline-block;
       width: 100%;
       height: 100%;
-      max-width: 570px;
+      max-width: 500px;
       max-height: 570px;
       pointer-events: none;
     }
