@@ -48,11 +48,13 @@
         <div>
           <ul>
             <li>
-              <a href="/coming-soon/?type=newsletter">Newsletter</a>
+              <a
+                href="https://magazine.mindplex.ai/coming-soon/?type=newsletter"
+                >Newsletter</a
+              >
             </li>
             <li>
-              <a href="https://magazine.mindplex.ai/contact-editors/"
-                >Contact Editors</a
+              <a href="https://magazine.mindplex.ai/contact-editors/">Editors</a
               >
             </li>
           </ul>
@@ -99,11 +101,16 @@
         </a>
       </div>
       <p class="footer-copy">
-        © <span>2023</span> Mindplex all rights reserved
+        © <span id="date-footer"></span> Mindplex all rights reserved
       </p>
     </div>
   </div>
 </footer>
+
+<script>
+  const footerDate = document.querySelector("#date-footer");
+  footerDate && (footerDate.textContent = String(new Date().getFullYear()));
+</script>
 <style>
   .center-footer-content ul,
   .right-footer-content ul {
