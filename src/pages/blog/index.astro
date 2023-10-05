@@ -19,14 +19,14 @@ const getBlogs = async () => {
 };
 
 const blogs = await getBlogs();
-const firstPost = blogs?.slice(-1)[0];
+const latestBlog = blogs ? blogs[0] : null;
 const blogsWithoutFirstPost = blogs?.filter(
-  (blog) => blog.id !== firstPost?.id
+  (blog) => blog.id !== latestBlog?.id
 );
 ---
 
 <Layout title="Blog">
-  <Hero {...firstPost} />
+  <Hero {...latestBlog} />
   <div class="pb-4">
     <ResponsiveCards gap="112px" width="580px">
       {
