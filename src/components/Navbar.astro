@@ -14,6 +14,9 @@ import GlowingBtn from "./GlowingBtn.astro";
     <a href="/#mindplexTokens">Mindplex Tokens</a>
     <a href="/blog">Blog</a>
     <a href="/#team">team</a>
+    <a href="https://docs.mindplex.ai" target="_blank" class="external-link"
+      >White paper</a
+    >
   </div>
   <div class="navbar_right">
     <a
@@ -37,6 +40,15 @@ import GlowingBtn from "./GlowingBtn.astro";
     align-items: center;
     gap: 24px;
     margin: 14px 24px;
+  }
+  .external-link:where(.astro-5BLMO7YK)::after {
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJoLTYgdy02IiBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZT0iIzAwZmNmYyIgc3Ryb2tlLXdpZHRoPSIyIj4KICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGQ9Ik0xMCA2SDZhMiAyIDAgMDAtMiAydjEwYTIgMiAwIDAwMiAyaDEwYTIgMiAwIDAwMi0ydi00TTE0IDRoNm0wIDB2Nm0wLTZMMTAgMTQiIC8+Cjwvc3ZnPg==);
+    display: inline-block;
+    width: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -7px;
   }
   .mindplex__logo img {
     width: 180px;
