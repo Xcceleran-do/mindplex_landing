@@ -15,8 +15,8 @@ function stripHtml(dirtyString: string) {
 <a class="card" href=`/blog/${url}`>
   <div class="left">
     <span>{formatTimeAgo(created_at)}</span>
-    <h1>{cropText(title, 10)}</h1>
-    <div class="">{stripHtml(cropText(description, 10))}</div>
+    <h1 class="mb-1">{cropText(title, 10)}</h1>
+    <div class="mt-2">{stripHtml(cropText(description, 10))}</div>
   </div>
   <img class="card-img" src={image} alt="title" />
 </a>
@@ -38,7 +38,7 @@ function stripHtml(dirtyString: string) {
   }
   .card-img {
     width: 100%;
-    height: 274px;
+    /* height: 274px; */
     max-width: 265px;
     border-radius: 0px 10px 10px 0px;
   }
