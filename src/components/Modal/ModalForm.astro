@@ -135,6 +135,7 @@
   const formContainer = document.getElementById("formContainer");
   const successMessage = document.getElementById("successMessage");
   const failureMessage = document.getElementById("failureMessage");
+  const openModalFooter = document.getElementById("openModalFooter");
   if (
     closeModalButton &&
     modal &&
@@ -143,11 +144,13 @@
     spinner &&
     formContainer &&
     successMessage &&
-    failureMessage
+    failureMessage &&
+    openModalFooter
   ) {
     closeModalButton.addEventListener("click", function () {
       modal.style.display = "none";
     });
+
     modal.addEventListener("click", function (event) {
       if (!formContainer.contains(event.target)) {
         modal.style.display = "none";
@@ -155,6 +158,9 @@
     });
 
     openModal.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+    openModalFooter.addEventListener("click", function () {
       modal.style.display = "block";
     });
     form.addEventListener("submit", async function (event) {
