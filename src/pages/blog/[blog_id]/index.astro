@@ -1,18 +1,18 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import GlobalStyles from "./GlobalStyles.astro";
-import type {BlogPost} from '../../../types/blog'
+import type { BlogPost } from "../../../types/blog";
 const { blog_id } = Astro.params;
-const API_URL = `${import.meta.env.API_URL}/blogs/${blog_id}`;
+const API_URL = `${import.meta.env.PUBLIC_API_URL}/blogs/${blog_id}`;
 
-const getBlog = async ()=> {
+const getBlog = async () => {
   try {
     const response = await fetch(API_URL);
     const { blogs } = await response.json();
-    const blog:BlogPost = blogs[0];
-    return blog 
+    const blog: BlogPost = blogs[0];
+    return blog;
   } catch (error) {
-    return null
+    return null;
   }
 };
 const blog = await getBlog();

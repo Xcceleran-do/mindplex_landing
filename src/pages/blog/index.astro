@@ -6,7 +6,7 @@ import ResponsiveCards from "../../layouts/ResponsiveCards.astro";
 
 import type { BlogContent } from "../../types/blog";
 
-const API_URL = import.meta.env.API_URL + "/blogs";
+const API_URL = import.meta.env.PUBLIC_API_URL + "/blogs";
 
 const getBlogs = async () => {
   try {

@@ -1,0 +1,185 @@
+<div class="modal z-50" id="contactModal">
+  <div
+    class="fixed inset-0 bg-[#3d4f834f] bg-opacity-75 flex items-center justify-center"
+    id="contactModal"
+  >
+    <div class="bg-[#1D253D] p-4 rounded-lg w-full max-w-md" id="formContainer">
+      <span
+        class="absolute top-0 right-0 p-4 cursor-pointer text-5xl"
+        id="closeModal">&times;</span
+      >
+      <form id="contactForm" class="relative z-30">
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium">Full name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            required
+            class="mt-1 p-2 w-full border rounded-md text-black"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="mt-1 p-2 w-full border rounded-md text-black"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium">Message:</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            required
+            class="mt-1 p-2 w-full border rounded-md text-black"
+            rows="4"></textarea>
+        </div>
+        <input
+          type="submit"
+          value="Submit"
+          class="px-4 py-2 text-white bg-[#34947A] rounded-md"
+        />
+        <div
+          class="absolute inset-0 flex items-center justify-center"
+          id="spinner"
+          style="display: none;"
+        >
+          <div
+            class="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"
+          >
+          </div>
+        </div>
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-[#1D253D]"
+          id="successMessage"
+          style="display: none;"
+        >
+          <p class="text-green-500 font-black text-2xl">
+            Form submitted successfully!
+          </p>
+        </div>
+        <div
+          class="absolute inset-0 flex items-center justify-center bg-[#1D253D]"
+          id="failureMessage"
+          style="display: none;"
+        >
+          <p class="text-red-500 font-black text-2xl">
+            Form submission failed. Please try again later.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+  }
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const API_URL = import.meta.env.PUBLIC_API_URL + "/user";
+  console.log(import.meta.env.PUBLIC_API_URL);
+  const sendUserMessage = async (data) => {
+    await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+  const closeModalButton = document.getElementById("closeModal");
+  const modal = document.getElementById("contactModal");
+  const form = document.getElementById("contactForm");
+  const openModal = document.getElementById("openModal");
+  const spinner = document.getElementById("spinner");
+  const formContainer = document.getElementById("formContainer");
+  const successMessage = document.getElementById("successMessage");
+  const failureMessage = document.getElementById("failureMessage");
+  if (
+    closeModalButton &&
+    modal &&
+    form &&
+    openModal &&
+    spinner &&
+    formContainer &&
+    successMessage &&
+    failureMessage
+  ) {
+    closeModalButton.addEventListener("click", function () {
+      modal.style.display = "none";
+    });
+    modal.addEventListener("click", function (event) {
+      if (!formContainer.contains(event.target)) {
+        modal.style.display = "none";
+      }
+    });
+
+    openModal.addEventListener("click", function () {
+      modal.style.display = "block";
+    });
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      spinner.style.display = "flex";
+      try {
+        const res = await sendUserMessage(data);
+        if (!res.ok) {
+          throw new Error("Error sending message");
+        }
+        spinner.style.display = "none";
+        successMessage.style.display = "flex";
+      } catch (error) {
+        console.log("error");
+        failureMessage.style.display = "flex";
+        spinner.style.display = "none";
+      }
+    });
+  } else {
+    console.error("Element not found");
+  }
+</script>
