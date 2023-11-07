@@ -116,10 +116,10 @@
 </style>
 
 <script>
-  const API_URL = import.meta.env.PUBLIC_API_URL + "/user";
-  console.log(import.meta.env.PUBLIC_API_URL);
+  const API_URL = import.meta.env.PUBLIC_API_MESSAGE_URL;
+
   const sendUserMessage = async (data) => {
-    await fetch(API_URL, {
+    return fetch(API_URL, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
