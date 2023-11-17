@@ -7,7 +7,6 @@ import ResponsiveCards from "../../layouts/ResponsiveCards.astro";
 import type { BlogContent } from "../../types/blog";
 
 const API_URL = import.meta.env.PUBLIC_API_URL + "/blogs";
-console.log(API_URL);
 const getBlogs = async () => {
   try {
     const response = await fetch(API_URL);
@@ -19,17 +18,12 @@ const getBlogs = async () => {
 };
 
 const blogs = await getBlogs();
-console.log(blogs);
 const latestBlog = blogs ? blogs[0] : null;
 const blogsWithoutFirstPost = blogs?.filter(
   (blog) => blog.id !== latestBlog?.id
 );
 ---
 
-<div class="hidden">
-  {API_URL}
-  {JSON.stringify(blogs)}
-</div>
 <Layout title="Blog">
   <Hero {...latestBlog} />
   <div class="pb-4">
