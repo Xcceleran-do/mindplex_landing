@@ -26,6 +26,10 @@ const blogsWithoutFirstPost = blogs?.filter(
 );
 ---
 
+<div class="hidden">
+  {API_URL}
+  {JSON.stringify(blogs)}
+</div>
 <Layout title="Blog">
   <Hero {...latestBlog} />
   <div class="pb-4">
