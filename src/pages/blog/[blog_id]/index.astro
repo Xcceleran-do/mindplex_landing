@@ -24,11 +24,7 @@ const blog = await getBlog();
 
   <div class="blog-content">
     <h1 class="blog-heading">{blog?.title}</h1>
-    <div class="social-icons">
-      <!-- <img src="/icons/icon-twitter.svg" alt="" />
-      <img src="/icons/icon-linkedin.svg" alt="" />
-      <img src="/icons/icon-facebook.svg" alt="" /> -->
-    </div>
+    <div class="social-icons"></div>
     <!-- <img class="heading-img" src={blog.photo_url} alt="" /> -->
     <div
       class="blog-content prose-invert prose-a:text-cyan-700 lg:prose-xl"
@@ -78,3 +74,26 @@ const blog = await getBlog();
     border-radius: 10px;
   }
 </style>
+<script>
+  const linkContainers: NodeListOf<HTMLDivElement> = document.querySelectorAll(
+    ".wp-block-embed__wrapper"
+  );
+  linkContainers?.forEach((link) => {
+    if (link.innerText.includes("youtube.com")) {
+      const videoId = link.innerText.split("v=")[1];
+      const iframe = document.createElement("iframe");
+      // tailwind add class w-full
+      iframe.width = "100%";
+
+      // iframe.width = "660";
+      iframe.height = "315";
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.title = "YouTube video player";
+      iframe.frameborder = "0";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowfullscreen = true;
+      link.replaceWith(iframe);
+    }
+  });
+</script>
