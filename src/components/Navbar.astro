@@ -9,12 +9,20 @@ import GlowingBtn from "./GlowingBtn.astro";
     </a>
   </div>
   <div class="navbar_center">
-    <a href="/#about">About</a>
-    <a href="/#ourAi">Our Ai</a>
-    <a href="/#mindplexTokens">Mindplex Tokens</a>
-    <a href="/blog">Blog</a>
-    <a href="/#team">team</a>
-    <a href="https://docs.mindplex.ai" target="_blank" class="">White paper</a>
+    <div class="nav_links">
+      <div>
+        <a href="/#about">About</a>
+        <a href="/#ourAi">Our Ai</a>
+        <a href="/blog">Blog</a>
+        <a href="/#team">team</a>
+      </div>
+      <div>
+        <a href="https://docs.mindplex.ai" target="_blank" class=""
+          >White paper</a
+        >
+        <a href="/#mindplexTokens">Mindplex Tokens</a>
+      </div>
+    </div>
   </div>
   <div class="navbar_right">
     <button id="openModal" class="navbar_right_contact rounded-full text-sm"
@@ -96,15 +104,56 @@ import GlowingBtn from "./GlowingBtn.astro";
     box-shadow: 0px 0px 29px #ff3f84;
     color: #343045;
   }
-  @media screen and (min-width: 768px) {
-    nav {
-      flex-direction: row;
+
+  .nav_links {
+    display: flex;
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav_links {
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      text-align: center;
+    }
+
+    .navbar_center a {
+      font-size: 12px;
+      padding: 20px 10px;
+      text-align: end;
     }
     .mindplex__logo img {
       width: 270px;
+      margin-top: 30px;
     }
   }
-  @media screen and (min-width: 952px) {
+
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    nav {
+      flex-direction: column;
+    }
+    .navbar_center a {
+      font-size: 12px;
+      padding: 20px 10px;
+    }
+    .mindplex__logo img {
+      width: 270px;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 1400px) {
+    .navbar_center a {
+      font-size: 16px;
+      padding: 20px 15px;
+    }
+    .mindplex__logo img {
+      width: 270px;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1401px) and (max-width: 1500px) {
     nav,
     section {
       margin: 66px 84px;
@@ -113,9 +162,34 @@ import GlowingBtn from "./GlowingBtn.astro";
     nav {
       flex-direction: row;
     }
+    
+    .nav_links a {
+      margin: 0px 20px;
+      font-size: 12px;
+    }
+    
+    .mindplex__logo img {
+      width: 300px;
+    }
 
-    .navbar_center {
-      gap: 44px;
+  }
+
+  @media screen and (min-width: 1501px) {
+    nav,
+    section {
+      margin: 66px 90px;
+    }
+
+    nav {
+      flex-direction: row;
+    }
+    .nav_links a {
+      margin: 0px 20px;
+      font-size: 16px;
+    }
+    
+    .mindplex__logo img {
+      width: 300px;
     }
   }
 </style>
