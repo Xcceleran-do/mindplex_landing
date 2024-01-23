@@ -31,7 +31,7 @@ const blog = await getBlog();
     </div>
     <!-- <img class="heading-img" src={blog.photo_url} alt="" /> -->
     <div
-      class="blog-content prose-invert prose-a:text-cyan-700 lg:prose-xl"
+      class="blog-content prose prose-invert prose-a:text-cyan-700 lg:prose-xl"
       set:html={blog?.description}
     />
   </div>
