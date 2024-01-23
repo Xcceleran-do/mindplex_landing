@@ -16,6 +16,15 @@ const { title } = Astro.props;
     <meta name="description" content="Mindplex" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/logoFav.svg" />
+
+    <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-SN4LWF0Y6J"></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SN4LWF0Y6J');
+</script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,6 +32,7 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
+    
     <title>{title}</title>
   </head>
   <body>
