@@ -64,10 +64,16 @@ function stripHtml(dirtyString: string) {
     color: var(--gray-6, #f2f2f2);
   }
 
+  @media screen and (max-width: 1127px) {
+    .card {
+      margin: auto;
+    }
+  }
   @media screen and (max-width: 768px) {
     .card {
       display: flex;
       flex-direction: column-reverse;
+      margin: auto;
     }
     .card-img {
       max-width: 100%;
