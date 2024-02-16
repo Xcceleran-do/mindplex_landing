@@ -23,7 +23,7 @@ const blog = await getBlog();
   <div class="hero__background"></div>
 
   <div class="blog-content">
-    <h1 class="blog-heading">{blog?.title}</h1>
+    <h1 class="blog-heading" set:html={blog?.title} />
     <div class="social-icons"></div>
     <!-- <img class="heading-img" src={blog.photo_url} alt="" /> -->
     <div
