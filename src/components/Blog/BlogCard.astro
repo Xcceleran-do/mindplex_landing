@@ -15,8 +15,10 @@ function stripHtml(dirtyString: string) {
 <a class="card" href=`/blog/${url}`>
   <div class="left">
     <span>{formatTimeAgo(created_at)}</span>
-    <h1 class="mb-1">{cropText(title, 10)}</h1>
-    <div class="mt-2">{stripHtml(cropText(description, 10))}</div>
+    <h1 class="mb-1 font-bold">{cropText(title, 10)}</h1>
+    <div class="mt-2 font-extralight">
+      {stripHtml(cropText(description, 10))}
+    </div>
   </div>
   <img class="card-img" src={image} alt="title" />
 </a>
