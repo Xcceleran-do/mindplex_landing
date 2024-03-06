@@ -2,161 +2,47 @@
 import GlowingBtn from "./GlowingBtn.astro";
 ---
 
-<section class="hero">
-  <div class="hero__background"></div>
-  <div class="hero__background__decoration"></div>
-  <div class="hero__content">
-    <h1 class="hero__title">
-      Blockchain-based <span>Decentralized</span> Media Network
+<section class="flex flex-col-reverse items-center mt-3.5 md:flex-row">
+  <div
+    class="absolute bg-[url('/hero_ellipse.svg')] w-full h-[109%] bg-no-repeat right-0 top-[-17rem] max-w-[797px] z-[-1] hidden md:block"
+  >
+  </div>
+  <div
+    class="absolute bg-[url('/hero_blurred.svg')] w-full h-[115%] bg-no-repeat right-[30%] top-10 max-w-[797px] z-[-1] hidden md:block"
+  >
+  </div>
+  <div
+    class="w-full max-w-[745px] flex flex-col gap-3.5 mb-3.75 items-center md:items-baseline"
+  >
+    <h1
+      class="font-bold text-lg leading-9 backdrop-blur-md md:text-5xl md:leading-tight"
+    >
+      Blockchain-based <span class="text-[#49FFB3] block">Decentralized</span> Media
+      Network
     </h1>
-    <p class="hero__description">
+    <p
+      class="text-white font-[Montserrat] text-xs md:text-base md:leading-5 max-w-md"
+    >
       Mindplex is a magazine and a social media platform providing a dynamic
       space for creators, influencers, and media enthusiasts to connect and
       collaborate.
     </p>
-    <div class="hero__cta">
+    <div
+      class="flex items-center justify-center cursor-pointer transition-all ease-in-out duration-300 mt-10 max-w-sm"
+    >
       <GlowingBtn
         href="https://magazine.mindplex.ai"
         text="Go to Mindplex Magazine"
         fontSize="23px"
       />
-      <img src="/hero_arrow.svg" alt="Image description" class="hero_cta_img" />
+      <img
+        src="/hero_arrow.svg"
+        alt="Image description"
+        class="hidden md:block transition-transform duration-300 hover:translate-x-2.5"
+      />
     </div>
   </div>
-  <div class="hero__image">
-    <img src="/hero_main.png" alt="Image description" />
+  <div class="w-full max-w-[270px] md:max-w-[715px]">
+    <img src="/hero_main.png" alt="Image description" class="w-full" />
   </div>
 </section>
-<style>
-  .hero {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column-reverse;
-    align-items: center;
-    margin-top: 14px;
-  }
-
-  .hero__content {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 15px;
-    width: 100%;
-    max-width: 745px;
-    text-align: center;
-  }
-  .hero__title {
-    font-weight: 700;
-    backdrop-filter: blur(10px);
-    font-size: 26px;
-    line-height: 36px;
-  }
-  .hero__cta:hover .hero_cta_img {
-    transform: translateX(10px);
-  }
-  .hero__title span {
-    color: #49ffb3;
-  }
-  .hero__text {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .hero__description {
-    color: #fff;
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    /* font-weight: 400;
-    font-size: 16px;
-    line-height: 20px; */
-  }
-  .hero__cta {
-    display: flex;
-    align-items: center;
-    align-self: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  .hero__cta button {
-    background: #ff8b92;
-    border-radius: 40px;
-    border: none;
-    padding: 4px 23px;
-    color: #343045;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 28px;
-    cursor: pointer;
-  }
-  .hero_cta_img {
-    display: none;
-    transition: all 0.3s ease-in-out;
-  }
-  .hero__image img {
-    width: 100%;
-    max-width: 270px;
-  }
-  @media screen and (min-width: 790px) {
-    .hero {
-      flex-direction: row;
-    }
-    .hero__image img {
-      max-width: 715px;
-    }
-    .hero_cta_img {
-      display: block;
-    }
-
-    .hero__description {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 20px;
-    }
-  }
-  @media screen and (min-width: 952px) {
-    .hero__content {
-      text-align: left;
-    }
-    .hero__cta {
-      align-self: baseline;
-    }
-    .hero__image {
-      display: block;
-      width: 100%;
-      height: 100%;
-      max-width: 715px;
-      max-height: 637px;
-      pointer-events: none;
-    }
-    .hero__title {
-      font-size: 46px;
-      line-height: 56px;
-    }
-    .hero__background {
-      position: absolute;
-      background: url("/hero_ellipse.svg");
-      width: 100%;
-      height: 109%;
-      background-repeat: no-repeat;
-      right: 0;
-      top: -67px;
-      max-width: 797px;
-      z-index: -1;
-    }
-    .hero__background__decoration {
-      position: absolute;
-      background: url("/hero_blurred.svg");
-      width: 100%;
-      height: 115%;
-      background-repeat: no-repeat;
-      right: 30%;
-      top: 40px;
-      max-width: 797px;
-      z-index: -1;
-    }
-  }
-</style>
