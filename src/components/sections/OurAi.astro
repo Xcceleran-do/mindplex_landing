@@ -3,26 +3,26 @@ import CardLayout from "../../layouts/CardLayout.astro";
 const cardContent = await Astro.glob("../../content/ourAi/*.md");
 ---
 
-<section class="our_ai_section" id="ourAi">
-  <div class="our_ai_section__header text-center">
-    <h1 class="text-2xl font-bold uppercase mb-4">Our AI</h1>
+<section class="our_ai_section my-32" id="ourAi">
+  <div class="our_ai_section__header flex flex-col gap-3">
+    <h1 class="text-4xl font-bold uppercase mb-4">Our AI</h1>
     <p class="font-light text-3xl">Powered Media Solutions.</p>
-    <img src="/line.svg" alt="line" class="mx-auto mb-6" />
+    <img src="/line.svg" alt="line" class="mb-6 w-64" />
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- CardLayout component is not converted to Tailwind as it's unclear from the provided code -->
     <!-- Assuming CardLayout has grid layout properties -->
     {
       cardContent.map((card) => {
-        const { title, description } = card.frontmatter;
+        const { title, image, description } = card.frontmatter;
         return (
-          <div class="card bg-black bg-opacity-25 rounded-3xl flex justify-center items-center p-8 relative max-w-md">
+          <div class="card bg-black bg-opacity-25 rounded-3xl flex justify-center items-center relative max-w-sm h-96">
             <div class=" bg-no-repeat bg-center opacity-20 bg-cover w-full h-full absolute">
-              <img src="/public/icons/solar-system.svg" class="w-full h-full" />
+              <img src={image} class="w-full h-full" />
             </div>
 
-            <div class=" flex justify-center items-center min-w-full z-50">
-              <h2 class=" text-3xl font-bold uppercase mb-4 max-w-sm self-center">
+            <div class=" flex justify-center items-center z-50">
+              <h2 class=" text-3xl font-bold uppercase mb-4 w-fit text-center">
                 {title}
               </h2>
             </div>
