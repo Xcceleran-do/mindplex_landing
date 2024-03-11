@@ -10,8 +10,7 @@ const cardContent = await Astro.glob("../../content/ourAi/*.md");
     <img src="/line.svg" alt="line" class="mb-6 w-64" />
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- CardLayout component is not converted to Tailwind as it's unclear from the provided code -->
-    <!-- Assuming CardLayout has grid layout properties -->
+  
     {
       cardContent.map((card) => {
         const { title, image, description } = card.frontmatter;

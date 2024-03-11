@@ -4,22 +4,13 @@ export interface Props {
   width?: string;
 }
 
-const { gap = "1rem", width = "402px" } = Astro.props;
+// const { gap = "1rem", width = "402px" } = Astro.props;
 ---
 
 <div class="">
-  <div class="card-grid">
+  <div class="card-grid flex flex-row flex-wrap gap-8 justify-evenly mt-12">
     <slot />
   </div>
 </div>
 
-<style define:vars={{ gap, width }}>
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr));
-    gap: var(--gap);
-  }
 
-  @media screen and (max-width: 768px) {
-  }
-</style>
