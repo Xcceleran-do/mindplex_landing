@@ -28,12 +28,12 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
         const { imageSource, title, description, color } = card.frontmatter;
         return (
           <div
-            class={`card ${color} flex flex-col mb-10 px-8 justify-evenly rounded-3xl h-[598px] max-w-[367px] text-white text-lg md:text-base`}
+            class={`card ${color} flex flex-col mb-10 px-8 py-7 justify-evenly rounded-3xl h-[598px] max-w-[367px] text-white text-lg md:text-base`}
           >
             <h2 class="text-2xl font-semibold uppercase text-left mb-5 ">
               {title}
             </h2>
-            <img src={imageSource} class=" max-w-xs max-h-80 self-center" />
+            <img src={imageSource} class=" w-full h-full" />
             <img src="/public/icons/plus-icon.svg" class=" w-8 self-end" />
           </div>
         );

@@ -18,31 +18,29 @@ const teams = await Astro.glob("../../content/team/*.md");
     </p>
   </div>
   <div
-    class="flex flex-row flex-wrap gap-8 justify-evenly mt-12"
+    class="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-12 gap-y-8"
   >
     {
       teams.map((team) => {
         const { name, position, imageUrl, socialLink, customImageStyle } =
           team.frontmatter;
         return (
-          <div class="relative flex flex-col items-center team-card w-96 h-72">
+          <div class="relative flex flex-col items-center team-card  md:w-84 xl:w-96 h-72 ">
             <img
               src={imageUrl}
               class="about-avatar rounded-2xl max-w-280 w-full h-full object-cover object-center"
               alt={name}
               style={customImageStyle}
             />
-            <div class="absolute bg-gradient-to-tr from-[#FFEDED] to #fff h-[86px] backdrop-blur-md w-full bottom-0 z-10 rounded-lg p-4" >
-
-            <div class="absolute bottom-5 z-20 flex flex-col justify-start items-start ">
-              <p class="name text-xl text-black font-semibold">{name}</p>
-              <p class="position text-xs text-black font-normal mt-2">
-                {position}
-              </p>
+            <div class="absolute bg-gradient-to-tr from-[#FFEDED] to #fff h-[86px] backdrop-blur-md w-full bottom-0 z-10 rounded-lg p-4">
+              <div class="absolute bottom-5 z-20 flex flex-col justify-start items-start ">
+                <p class="name text-xl text-black font-semibold">{name}</p>
+                <p class="position text-xs text-black font-normal mt-2">
+                  {position}
+                </p>
+              </div>
             </div>
           </div>
-          </div>
-          
         );
       })
     }
