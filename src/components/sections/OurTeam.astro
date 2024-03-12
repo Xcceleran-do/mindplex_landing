@@ -2,7 +2,7 @@
 const teams = await Astro.glob("../../content/team/*.md");
 ---
 
-<section class="our_team mt-32" id="team">
+<section class="our_team my-32" id="team">
   <div class="our_team_text">
     <div
       class="flex items-center justify-center gap-4 w-full overflow-hidden mb-8"
@@ -18,7 +18,7 @@ const teams = await Astro.glob("../../content/team/*.md");
     </p>
   </div>
   <div
-    class="grid grid-cols-1 gap-x-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-12 gap-y-8"
+    class="grid grid-cols-1 mt-10 gap-x-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-12 gap-y-8"
   >
     {
       teams.map((team) => {
