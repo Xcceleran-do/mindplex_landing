@@ -6,14 +6,20 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
 <section class="card_grid_section" id="mindplexTokens">
   <div class="heading_container">
     <div
-      class="card_grid_section__header flex flex-row items-center justify-center gap-6 w-full overflow-hidden mb-8"
+      class="flex flex-row items-center justify-center gap-6 w-full overflow-hidden mb-8 max-w-5xl mx-auto"
     >
-      <img src="/line.svg" alt=" " class="transform rotate-180" />
-      <h2 class="text-3xl uppercase font-semibold">Mindplex Tokens</h2>
-      <img src="/line.svg" alt=" " class="max-w-48" />
+      <img
+        src="/line.svg"
+        alt=" "
+        class="transform rotate-180 w-full max-w-sm"
+      />
+      <h2 class="text-3xl uppercase font-semibold min-w-max text-center">
+        Mindplex Tokens
+      </h2>
+      <img src="/line.svg" alt=" " class="w-full max-w-sm" />
     </div>
     <p
-      class="text-white font-montserrat text-sm font-normal leading-5 mb-12 px-12"
+      class="text-white font-montserrat text-sm font-normal leading-5 mb-12 px-12 max-w-6xl mx-auto"
     >
       Mindplex operates based on a carefully designed tokenomics system
       involving a liquid cryptographic token (MPX) which is used to incentivize
