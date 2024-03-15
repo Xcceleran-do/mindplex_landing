@@ -1,19 +1,14 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-
+import { getQuarterData } from "../../../utils/getQuarterData.astro";
 
 const { version_id } = Astro.params;
-console.log("version", version_id);
-
-
-const roadmapContent = await Astro.glob(`../../../content/roadmap/${version_id}/*.md`);
-
+const roadmapContent = await getQuarterData(version_id);
 const roadmapVersion = await Astro.glob(
   "../../../content/roadmapVersions/*.md"
 );
 ---
-
-<Layout title="roadmap">
+ <Layout title="roadmap">
   <section class="roadmap my-32">
     <div class="relative w-full">
       <img src="/public/roadmap-line.svg" class="w-full" />
@@ -50,7 +45,7 @@ const roadmapVersion = await Astro.glob(
       <div>
         {
           roadmapContent.map((content) => {
-            const { title, description, color } = content.frontmatter;
+            const { title, description, color } = content;
             return (
               <div class="flex flex-row mb-6 w-full mt-12 gap-4  md:gap-28 lg:gap-36">
                 <div
@@ -72,4 +67,4 @@ const roadmapVersion = await Astro.glob(
       </div>
     </div>
   </section>
-</Layout>
+</Layout> 

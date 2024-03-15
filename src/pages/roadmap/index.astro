@@ -1,10 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
-
+import { getQuarterData } from "../../utils/getQuarterData.astro";
 
 const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
-const roadmapContent = await Astro.glob("../../content/roadmap/Q1/*.md");
+const roadmapContent = await getQuarterData("Q1");
 ---
 
 <Layout title="roadmap">
@@ -24,7 +23,7 @@ const roadmapContent = await Astro.glob("../../content/roadmap/Q1/*.md");
                     {title}
                   </h3>
                 </div>
-                <a href=`roadmap/${id}`>
+                <a href=`${id}`>
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />
@@ -44,7 +43,7 @@ const roadmapContent = await Astro.glob("../../content/roadmap/Q1/*.md");
       <div>
         {
           roadmapContent.map((content) => {
-            const { title, description, color } = content.frontmatter;
+            const { title, description, color } = content
             return (
               <div class="flex flex-row mb-6 w-full mt-12 gap-4  md:gap-28 lg:gap-36">
                 <div
