@@ -5,205 +5,103 @@ const tokenCardsContent = await Astro.glob("../../content/mindplexTokens/*.md");
 
 <section class="card_grid_section" id="mindplexTokens">
   <div class="heading_container">
-    <div class="card_grid_section__header">
-      <img src="/line.svg" alt=" " />
-      <h2>Mindplex Tokens</h2>
-      <img src="/line.svg" alt=" " />
+    <div
+      class="flex flex-row items-center justify-center gap-6 w-full overflow-hidden mb-8 max-w-5xl mx-auto"
+    >
+      <img
+        src="/line.svg"
+        alt=" "
+        class="transform rotate-180 w-full max-w-sm"
+      />
+      <h2 class="text-3xl uppercase font-semibold min-w-max text-center">
+        Mindplex Tokens
+      </h2>
+      <img src="/line.svg" alt=" " class="w-full max-w-sm" />
     </div>
-    <p>
+    <p
+      class="text-white font-montserrat text-sm font-normal leading-5 mb-12 px-12 max-w-6xl mx-auto"
+    >
       Mindplex operates based on a carefully designed tokenomics system
       involving a liquid cryptographic token (MPX) which is used to incentivize
       good content and good conduct, and a non-liquid soulbound token, the
-      Mindplex Reputation Token MPXR), which is used to measure and quantify the
-      weight of users credibility.
+      Mindplex Reputation Token (MPXR), which is used to measure and quantify
+      the weight of users credibility.
     </p>
   </div>
   <CardLayout>
     {
       tokenCardsContent.map((card) => {
-        const { imageSource, title, description } = card.frontmatter;
+        const { imageSource, title, description, color } = card.frontmatter;
         return (
-          <div class="card swiper-slide">
-            <img
-              src={imageSource}
-              class="Mindplex_token_image"
-              alt="Card image description"
-            />
-            <h2>{title}</h2>
-            <p>{description}</p>
+          <div class="card-container relative">
+            <div
+              class={`card-inner relative transform transition duration-700 ease-in-out ${color} flex flex-col mb-10 px-8 py-7 justify-evenly rounded-3xl h-[598px] max-w-[367px]`}
+            >
+              <div class="card-back absolute backface-hidden w-full h-full transform rotateY-180 bg-white p-4 left-0 rounded-3xl">
+                <p class="text-gray-800 text-base">{description}</p>
+                <img
+                  src="/icons/minus-icon.svg"
+                  class="w-8 cursor-pointer minus-icon absolute bottom-5 right-5"
+                />
+              </div>
+              <h2 class="text-2xl font-semibold uppercase text-left mb-5">
+                {title}
+              </h2>
+              <img src={imageSource} class="w-full h-full" />
+              <img
+                src="/icons/plus-icon.svg"
+                class="w-8 self-end cursor-pointer plus-icon"
+              />
+            </div>
           </div>
         );
       })
     }
   </CardLayout>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".plus-icon").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        const cardInner = event.target.closest(".card-inner");
+        cardInner.classList.toggle("is-flipped");
+      });
+    });
+  });
+
+  document.querySelectorAll(".minus-icon").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      const cardInner = event.target.closest(".card-inner");
+      cardInner.classList.toggle("is-flipped");
+    });
+  });
+</script>
 <style>
-  .heading_container {
-    margin-bottom: 60px;
+  .backface-hidden {
+    backface-visibility: hidden;
   }
-
-  .heading_container p {
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
+  .card-container {
+    perspective: 1000px;
   }
-  .card_grid_section__header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 22px;
+  .card-inner {
+    position: relative;
     width: 100%;
-    overflow: hidden;
-    margin-bottom: 34px;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
   }
-  .card_grid_section__header img:first-child {
-    transform: rotate(180deg);
+  .card-inner.is-flipped {
+    transform: rotateY(180deg);
   }
-  .card_grid_section__header img {
-    width: 100%;
-    max-width: 210px;
+  .card-front,
+  .card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
-  .card_grid_section__header h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 44px;
-  }
-
-  .card_grid_section__header p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-  }
-
-  .card {
-    width: 325px;
-    height: 381px;
-    padding-left: 41px;
-    padding-right: 42px;
-    padding-top: 24px;
-    padding-bottom: 21px;
-    margin-bottom: 42px;
-    background: linear-gradient(
-      180deg,
-      rgba(67, 61, 96, 0.25) 0%,
-      rgba(73, 255, 179, 0.25) 100%
-    );
-    border-radius: 17px;
-    min-height: 388px;
-    font-size: 20px;
-    width: 100%;
-  }
-
-  .Mindplex_token_image {
-    max-width: 70px;
-    max-height: 53px;
-    align-self: center;
-    margin-bottom: 10px;
-  }
-  .card p {
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: lowercase;
-  }
-
-  .card h2 {
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-  }
-
-  @media screen and (min-width: 952px) {
-    .card {
-      border-radius: 17px;
-      min-height: 388px;
-      font-size: 20px;
-      width: 100%;
-      padding: 18px;
-      background: linear-gradient(
-        180deg,
-        rgba(67, 61, 96, 0.25) 0%,
-        rgba(73, 255, 179, 0.25) 100%
-      );
-      background-size: 400%;
-      border-radius: 0.6rem;
-      background-position: 100%;
-      transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-        0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    }
-
-    .card > a {
-      width: 100%;
-      text-decoration: none;
-      line-height: 1.4;
-      padding: 1rem 1.3rem;
-      border-radius: 0.35rem;
-      color: #111;
-      background-color: white;
-      opacity: 0.8;
-    }
-    .card h2 {
-      font-weight: 700;
-      font-size: 26px;
-      margin: 0;
-      font-size: 1.25rem;
-      transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .card p {
-      font-family: Montserrat;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      text-transform: lowercase;
-    }
-    p {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-    }
-    .card:is(:hover, :focus-within) {
-      background-position: 0;
-      background-image: var(--accent-gradient);
-      transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .card:is(:hover, :focus-within) h2 {
-      color: rgb(var(--accent));
-    }
-
-    .Mindplex_token_image {
-      max-width: 70px;
-      max-height: 53px;
-      align-self: center;
-      margin-bottom: 10px;
-    }
-    .heading_container p {
-      font-family: Montserrat;
-      font-size: 23px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 165%;
-    }
-    .card_grid_section__header h2 {
-      font-size: 36px;
-    }
-    @media screen and (min-width: 952px) {
-      .card {
-        /* width: 450px; */
-      }
-    }
+  .card-back {
+    transform: rotateY(180deg);
   }
 </style>
