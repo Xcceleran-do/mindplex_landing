@@ -3,7 +3,20 @@ import Layout from "../../../layouts/Layout.astro";
 import { getQuarterData } from "../../../utils/getQuarterData.astro";
 
 const { version_id } = Astro.params;
-const roadmapContent = await getQuarterData(version_id);
+type VersionId = "Q1" | "Q2" | "Q3";
+
+function validateVersionId(versionId: string | undefined): VersionId {
+  if (!versionId) return "Q1";
+  const validVersions: VersionId[] = ["Q1", "Q2", "Q3"];
+  if (validVersions.includes(versionId.toUpperCase() as VersionId)) {
+    return versionId.toUpperCase() as VersionId;
+  }
+  return "Q1";
+}
+
+const version= validateVersionId(version_id);
+
+const roadmapContent = await getQuarterData(version);
 const roadmapVersion = await Astro.glob(
   "../../../content/roadmapVersions/*.md"
 );
