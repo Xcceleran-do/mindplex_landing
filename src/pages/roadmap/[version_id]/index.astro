@@ -1,10 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../../layouts/Layout.astro";
 
 
+const { version_id } = Astro.params;
+console.log("version", version_id);
 
-const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
-const roadmapContent = await Astro.glob("../../content/roadmap/Q1/*.md");
+
+const roadmapContent = await Astro.glob(`../../../content/roadmap/${version_id}/*.md`);
+
+const roadmapVersion = await Astro.glob(
+  "../../../content/roadmapVersions/*.md"
+);
 ---
 
 <Layout title="roadmap">
@@ -24,7 +30,7 @@ const roadmapContent = await Astro.glob("../../content/roadmap/Q1/*.md");
                     {title}
                   </h3>
                 </div>
-                <a href=`roadmap/${id}`>
+                <a href=`${id}`>
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />
