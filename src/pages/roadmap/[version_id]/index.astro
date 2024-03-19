@@ -5,6 +5,8 @@ import { getQuarterData } from "../../../utils/getQuarterData.astro";
 const { version_id } = Astro.params;
 type VersionId = "Q1" | "Q2" | "Q3";
 
+let opacity = 25;
+
 function validateVersionId(versionId: string | undefined): VersionId {
   if (!versionId) return "Q1";
   const validVersions: VersionId[] = ["Q1", "Q2", "Q3"];
@@ -14,14 +16,15 @@ function validateVersionId(versionId: string | undefined): VersionId {
   return "Q1";
 }
 
-const version= validateVersionId(version_id);
+const version = validateVersionId(version_id);
 
 const roadmapContent = await getQuarterData(version);
 const roadmapVersion = await Astro.glob(
   "../../../content/roadmapVersions/*.md"
 );
 ---
- <Layout title="roadmap">
+
+<Layout title="roadmap">
   <section class="roadmap my-32">
     <div class="relative w-full">
       <img src="/public/roadmap-line.svg" class="w-full" />
@@ -30,7 +33,9 @@ const roadmapVersion = await Astro.glob(
       >
         {
           roadmapVersion.map((version) => {
-            const {id, title, backgroundColor, color } = version.frontmatter;
+            const { id, title, backgroundColor, color } = version.frontmatter;
+            version_id == id ? (opacity = 100) : (opacity = 25);
+
             return (
               <div>
                 <div>
@@ -38,12 +43,12 @@ const roadmapVersion = await Astro.glob(
                     {title}
                   </h3>
                 </div>
-                <a href=`${id}`>
+                <a href={`${id}`}>
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />
                   <div
-                    class={`${backgroundColor} w-8 h-8 absolute top-7 ml-3 rounded-full md:top-12`}
+                    class={`${backgroundColor} w-8 h-8 absolute top-7 ml-3 rounded-full  opacity-${opacity} md:top-12`}
                   />
                 </a>
               </div>
@@ -54,30 +59,41 @@ const roadmapVersion = await Astro.glob(
     </div>
 
     <div>
-      <h1 class="text-4xl text-[#5BFFB0] mt-20 text-center">Mindplex 2.0</h1>
       <div>
         {
           roadmapContent.map((content) => {
-            const { title, description, color } = content;
+            const { title, sectionTitle, sectionColor, description, color } =
+              content;
             return (
-              <div class="flex flex-row mb-6 w-full mt-12 gap-4  md:gap-28 lg:gap-36">
-                <div
-                  class={`${color}  py-5 px-2 rounded-xl text-center text-xs sm:px-8 sm:text-sm w-[251px]  lg:w-[985px] md:text-3xl lg:px-20 `}
-                >
-                  {title}
+              <>
+                <div>
+                  <h1
+                    class={`text-[#${sectionColor}] text-4xl mt-20 text-center`}
+                  >
+                    {sectionTitle}
+                  </h1>
                 </div>
+                <div class="flex flex-row mb-6 w-full mt-12 gap-4  md:gap-28 lg:gap-36">
+                  <div
+                    class={`${color}  py-5 px-2 rounded-xl text-center text-xs sm:px-8 sm:text-sm w-[251px]  lg:w-[985px] md:text-2xl lg:px-20 `}
+                  >
+                    {title}
+                  </div>
 
-                <div class=" w-full flex flex-row gap-4 lg:gap-10">
-                  <div class="bg-[#5BFFB0] min-w-[8px] rounded-2xl sm:min-w-[15px] " />
-                  <p class=" w-full text-xs sm:text-sm  sm:w-fit md:text-2xl">
-                    {description}
-                  </p>
+                  <div class=" w-full flex flex-row gap-4 lg:gap-10">
+                    <div
+                      class={`bg-[#${sectionColor}]  min-w-[8px] rounded-2xl sm:min-w-[15px]`}
+                    />
+                    <p class=" w-full text-xs sm:text-sm  sm:w-fit md:text-2xl">
+                      {description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </>
             );
           })
         }
       </div>
     </div>
   </section>
-</Layout> 
+</Layout>
