@@ -25,19 +25,28 @@ const teams = await Astro.glob("../../content/team/*.md");
         const { name, position, imageUrl, socialLink, customImageStyle } =
           team.frontmatter;
         return (
-          <div class="relative flex flex-col items-center team-card  md:w-84 xl:w-96 h-72 ">
+          <div class="relative flex flex-col items-center team-card  md:w-84 xl:w-96 h-72 transition-all ease-in-out duration-300">
             <img
               src={imageUrl}
               class="about-avatar rounded-2xl max-w-280 w-full h-full object-cover object-center"
               alt={name}
               style={customImageStyle}
             />
-            <div class="absolute bg-gradient-to-tr from-[#FFEDED] to #fff h-[86px] backdrop-blur-md w-full bottom-0 z-10 rounded-lg p-4">
-              <div class="absolute bottom-5 z-20 flex flex-col justify-start items-start ">
+
+            <div class="bottom-0 absolute backdrop-blur-xlll rounded-2xl h-[86px] w-full transition-all ease-in-out duration-300">
+              <div class="p-6 text-black">
                 <p class="name text-xl text-black font-semibold">{name}</p>
                 <p class="position text-xs text-black font-normal mt-2">
                   {position}
                 </p>
+                <div class="mt-3">
+                  <a target="_blank" href={socialLink} class="cursor-pointer">
+                    <img
+                      src="https://magazine.mindplex.ai/wp-content/plugins/mp-general/public/assets/linkedin.svg"
+                      alt="Linkedin"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -46,3 +55,20 @@ const teams = await Astro.glob("../../content/team/*.md");
     }
   </div>
 </section>
+
+<style>
+  .backdrop-blur-xlll {
+    -webkit-mask-image: url("/icons/slider_mask.svg");
+    mask-image: url("icons/slider_mask.svg");
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -webkit-mask-size: cover;
+    mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background: rgba(255, 237, 237, 0.37);
+  }
+  .team-card:hover .backdrop-blur-xlll {
+    height: 80%;
+  }
+</style>
