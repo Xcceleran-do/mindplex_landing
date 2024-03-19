@@ -4,21 +4,22 @@ import { getQuarterData } from "../../utils/getQuarterData.astro";
 
 const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
 const roadmapContent = await getQuarterData("Q1");
-
-let opacity = 25;
 ---
 
 <Layout title="roadmap">
   <section class="roadmap my-32">
     <div class="relative w-full">
-      <img src="/public/roadmap-line.svg" class="w-full" />
+      <img src="/public/3-version-line.svg" class="w-full" />
       <div
         class="absolute -top-10 flex flex-row justify-evenly w-full md:-top-14"
       >
         {
           roadmapVersion.map((version) => {
+          
             const { id, title, backgroundColor, color } = version.frontmatter;
-            id == "Q1" ? (opacity = 100) : (opacity = 25);
+           
+
+           
             return (
               <div>
                 <div>
@@ -28,12 +29,11 @@ let opacity = 25;
                 </div>
 
                 <a href={`roadmap/${id}`}>
-
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />
                   <div
-                    class={`${backgroundColor} w-8 h-8 absolute top-7 ml-3 rounded-full opacity-${opacity} md:top-12`}
+                    class={`opacity-25 ${backgroundColor}  w-8 h-8 absolute top-7 ml-3 rounded-full  md:top-12`}
                   />
                 </a>
               </div>

@@ -3,13 +3,13 @@ import Layout from "../../../layouts/Layout.astro";
 import { getQuarterData } from "../../../utils/getQuarterData.astro";
 
 const { version_id } = Astro.params;
-type VersionId = "Q1" | "Q2" | "Q3";
+type VersionId = "Q1" | "Q4" | "Q3";
 
-let opacity = 25;
+
 
 function validateVersionId(versionId: string | undefined): VersionId {
   if (!versionId) return "Q1";
-  const validVersions: VersionId[] = ["Q1", "Q2", "Q3"];
+  const validVersions: VersionId[] = ["Q1", "Q4", "Q3"];
   if (validVersions.includes(versionId.toUpperCase() as VersionId)) {
     return versionId.toUpperCase() as VersionId;
   }
@@ -27,12 +27,13 @@ const roadmapVersion = await Astro.glob(
 <Layout title="roadmap">
   <section class="roadmap my-32">
     <div class="relative w-full">
-      <img src="/public/roadmap-line.svg" class="w-full" />
+      <img src="/public/3-version-line.svg" class="w-full" />
       <div
         class="absolute -top-10 flex flex-row justify-evenly w-full md:-top-14"
       >
         {
           roadmapVersion.map((version) => {
+            let opacity = 25;
             const { id, title, backgroundColor, color } = version.frontmatter;
             version_id == id ? (opacity = 100) : (opacity = 25);
 

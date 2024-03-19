@@ -1,8 +1,8 @@
 ---
-export const getQuarterData = async (quarter: "Q1" | "Q2" | "Q3") => {
+export const getQuarterData = async (quarter: "Q1" | "Q4" | "Q3") => {
   const globs = {
     Q1: Astro.glob("../content/roadmap/Q1/*.md"),
-    Q2: Astro.glob("../content/roadmap/Q2/*.md"),
+    Q4: Astro.glob("../content/roadmap/Q4/*.md"),
     Q3: Astro.glob("../content/roadmap/Q3/*.md"),
   };
 
