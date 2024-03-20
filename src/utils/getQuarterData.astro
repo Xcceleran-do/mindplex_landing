@@ -1,9 +1,11 @@
 ---
-export const getQuarterData = async (quarter: "Q1" | "Q4" | "Q3") => {
+export const getQuarterData = async (
+  quarter: "Q4_2023" | "Q2_2024" | "Q4_2025"
+) => {
   const globs = {
-    Q1: Astro.glob("../content/roadmap/Q1/*.md"),
-    Q4: Astro.glob("../content/roadmap/Q4/*.md"),
-    Q3: Astro.glob("../content/roadmap/Q3/*.md"),
+    Q4_2023: Astro.glob("../content/roadmap/Q1/*.md"),
+    Q2_2024: Astro.glob("../content/roadmap/Q3/*.md"),
+    Q4_2025: Astro.glob("../content/roadmap/Q4/*.md"),
   };
 
   try {
