@@ -3,12 +3,13 @@ export interface Props {
   text: string;
   href: string;
   fontSize?: string;
+  className?: string;
 }
 
-const { text, href, fontSize } = Astro.props;
+const { text, href, fontSize, className } = Astro.props;
 ---
 
-<a class="btn" href={href} target="_blank">{text}</a>
+<a class=`btn ${className}` href={href} target="_blank">{text}</a>
 
 <style define:vars={{ fontSize }}>
   .btn {
