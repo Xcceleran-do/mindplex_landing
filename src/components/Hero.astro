@@ -43,6 +43,19 @@ import GlowingBtn from "./GlowingBtn.astro";
     </div>
   </div>
   <div class="w-full max-w-[270px] md:max-w-[715px]">
-    <img src="/hero_main.png" alt="Image description" class="w-full" />
+    <canvas id="canvas3d" class="w-full h-full" width="100%" height="100%"
+    ></canvas>
   </div>
 </section>
+<script
+  type="module"
+  src="https://unpkg.com/@splinetool/viewer@1.0.66/build/spline-viewer.js"
+></script>
+
+<script>
+  import { Application } from "@splinetool/runtime";
+
+  const canvas = document.getElementById("canvas3d");
+  const app = new Application(canvas);
+  app.load("https://prod.spline.design/VEuho3NWmFQK-bnv/scene.splinecode");
+</script>

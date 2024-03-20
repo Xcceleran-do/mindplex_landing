@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getQuarterData } from "../../utils/getQuarterData.astro";
+
+const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
+const roadmapContent = await getQuarterData("Q1");
+---
+
+<Layout title="roadmap">
+  <section class="roadmap my-32">
+    <div class="relative w-full">
+      <img src="/public/3-version-line.svg" class="w-full" />
+      <div
+        class="absolute -top-10 flex flex-row justify-evenly w-full md:-top-14"
+      >
+        {
+          roadmapVersion.map((version) => {
+          
+            const { id, title, backgroundColor, color } = version.frontmatter;
+           
+
+           
+            return (
+              <div>
+                <div>
+                  <h3 class={` text-xs w-full ${color} sm:text-sm md:text-3xl`}>
+                    {title}
+                  </h3>
+                </div>
+
+                <a href={`roadmap/${id}`}>
+                  <div
+                    class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
+                  />
+                  <div
+                    class={`opacity-25 ${backgroundColor}  w-8 h-8 absolute top-7 ml-3 rounded-full  md:top-12`}
+                  />
+                </a>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+
+    {
+      roadmapContent.map((content) => {
+        const { title, sectionTitle, sectionColor, description, color } =
+          content;
+        return (
+          <>
+            <div>
+              <h1 class={`text-[#${sectionColor}] text-4xl mt-20 text-center`}>
+                {sectionTitle}
+              </h1>
+            </div>
+            <div class="flex flex-row mb-6 w-full mt-12 gap-4  md:gap-28 lg:gap-36">
+              <div
+                class={`${color}  py-5 px-2 rounded-xl text-center text-xs sm:px-8 sm:text-sm w-[251px]  lg:w-[985px] md:text-2xl lg:px-20 `}
+              >
+                {title}
+              </div>
+
+              <div class=" w-full flex flex-row gap-4 lg:gap-10">
+                <div
+                  class={`bg-[#${sectionColor}]  min-w-[8px] rounded-2xl sm:min-w-[15px]`}
+                />
+                <p class=" w-full text-xs sm:text-sm  sm:w-fit md:text-2xl">
+                  {description}
+                </p>
+              </div>
+            </div>
+          </>
+        );
+      })
+    }
+  </section>
+</Layout>

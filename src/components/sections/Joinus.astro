@@ -3,15 +3,21 @@ import GlowingBtn from "../GlowingBtn.astro";
 ---
 
 <section class="join_section">
-  <div class="join_section__content_wrapper">
-    <div class="top_wrapper">
+  <div class="join_section__content_wrapper text-center">
+    <div
+      class="top_wrapper flex flex-col md:flex-row justify-center items-center gap-10"
+    >
       <div class="join_section__content">
-        <h2>Mindplexes</h2>
-        <p>Join Our Network</p>
-        <img src="/line.svg" alt=" " class="mindplex_section__line" />
+        <h2 class="text-2xl md:text-4xl font-bold mb-3">Mindplexes</h2>
+        <p class="text-2xl md:text-xl">Join Our Network</p>
       </div>
+      <img
+        src="/line.svg"
+        alt=" "
+        class="mindplex_section__line w-full max-w-xs md:max-w-none md:w-auto mx-auto md:mx-0"
+      />
       <div class="join_section__text">
-        <p>
+        <p class="max-w-xl text-base md:text-xl">
           Embrace the future of media with Mindplex. Be part of a vibrant
           community where creativity knows no bounds and innovation takes center
           stage. Together, let’s reshape the media landscape, unleash the power
@@ -21,86 +27,12 @@ import GlowingBtn from "../GlowingBtn.astro";
         </p>
       </div>
     </div>
-    <div style="margin-top: 93px; margin-bottom: 103px;">
-      <GlowingBtn
-        text="Join Us"
+    <div class="mt-12 md:mt-16 mb-16">
+      <a
         href="https://social.mindplex.ai/public/local"
-        fontSize="26px"
-      />
+        class="btn-glow text-2xl md:text-4xl"
+        style="font-size: 26px;">Join Us</a
+      >
     </div>
-    <style>
-      .join_section {
-        margin-bottom: 52px;
-      }
-      .join_section__content {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas:
-          "Title img img"
-          "Join-us img img"
-          ". . .";
-      }
-      .join_section__content h2 {
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        grid-area: Title;
-        margin-bottom: 7px;
-      }
-
-      .join_section__content img {
-        max-width: 20rem;
-        margin-left: 20px;
-        width: 100%;
-      }
-
-      .join_section__content p {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 300;
-        grid-area: Join-us;
-      }
-
-      .join_section__text p {
-        max-width: 624px;
-        width: 100%;
-        font-family: Montserrat;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 23px;
-        text-align: initial;
-      }
-      .mindplex_section__line {
-        grid-area: img;
-        justify-self: center;
-        align-self: center;
-        width: 100%;
-        max-width: 175px;
-        margin-right: 69px;
-      }
-      .join_section__content_wrapper {
-        text-align: center;
-      }
-
-      @media screen and (min-width: 768px) {
-        .top_wrapper {
-          display: flex;
-          justify-content: space-between;
-          gap: 10px;
-        }
-        .mindplex_section__line {
-          max-width: fit-content;
-        }
-        .join_section__content h2 {
-          font-size: 36px;
-        }
-        .join_section__content p {
-          font-size: 36px;
-        }
-      }
-    </style>
   </div>
 </section>

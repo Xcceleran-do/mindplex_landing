@@ -1,0 +1,19 @@
+---
+export const getQuarterData = async (quarter: "Q1" | "Q4" | "Q3") => {
+  const globs = {
+    Q1: Astro.glob("../content/roadmap/Q1/*.md"),
+    Q4: Astro.glob("../content/roadmap/Q4/*.md"),
+    Q3: Astro.glob("../content/roadmap/Q3/*.md"),
+  };
+
+  try {
+    const files = await globs[quarter];
+    return files.map((file) => ({
+      ...file.frontmatter,
+    }));
+  } catch (error) {
+    console.error("Error loading markdown files:", error);
+    return [];
+  }
+};
+---
