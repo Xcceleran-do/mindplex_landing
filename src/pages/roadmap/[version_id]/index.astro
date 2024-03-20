@@ -3,17 +3,15 @@ import Layout from "../../../layouts/Layout.astro";
 import { getQuarterData } from "../../../utils/getQuarterData.astro";
 
 const { version_id } = Astro.params;
-type VersionId = "Q1" | "Q4" | "Q3";
-
-
+type VersionId = "Q4_2023" | "Q2_2024" | "Q4_2025";
 
 function validateVersionId(versionId: string | undefined): VersionId {
-  if (!versionId) return "Q1";
-  const validVersions: VersionId[] = ["Q1", "Q4", "Q3"];
+  if (!versionId) return "Q4_2023";
+  const validVersions: VersionId[] = ["Q4_2023", "Q2_2024", "Q4_2025"];
   if (validVersions.includes(versionId.toUpperCase() as VersionId)) {
     return versionId.toUpperCase() as VersionId;
   }
-  return "Q1";
+  return "Q4_2023";
 }
 
 const version = validateVersionId(version_id);
