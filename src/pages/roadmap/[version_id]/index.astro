@@ -3,6 +3,13 @@ import Layout from "../../../layouts/Layout.astro";
 import { getQuarterData } from "../../../utils/getQuarterData.astro";
 
 const { version_id } = Astro.params;
+
+let versionId = version_id?.slice(0, -2);
+let id: string | any = version_id?.charAt(version_id.length - 1);
+let startid = parseInt(id);
+
+let endid = startid + 3;
+
 type VersionId = "Q4_2023" | "Q2_2024" | "Q4_2025";
 
 function validateVersionId(versionId: string | undefined): VersionId {
@@ -14,7 +21,7 @@ function validateVersionId(versionId: string | undefined): VersionId {
   return "Q4_2023";
 }
 
-const version = validateVersionId(version_id);
+const version = validateVersionId(versionId);
 
 const roadmapContent = await getQuarterData(version);
 const roadmapVersion = await Astro.glob(
@@ -30,11 +37,14 @@ const roadmapVersion = await Astro.glob(
         class="absolute -top-10 flex flex-row justify-evenly w-full md:-top-14"
       >
         {
-          roadmapVersion.map((version) => {
+          roadmapVersion.map((version, index) => {
             let opacity = 25;
             const { id, title, backgroundColor, color } = version.frontmatter;
             version_id == id ? (opacity = 100) : (opacity = 25);
-
+            console.log(title, index);
+            if (index >= endid || startid > index) {
+              return;
+            }
             return (
               <div>
                 <div>
@@ -42,7 +52,7 @@ const roadmapVersion = await Astro.glob(
                     {title}
                   </h3>
                 </div>
-                <a href={`${id}`}>
+                <a href={`${id}_${index}`}>
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />

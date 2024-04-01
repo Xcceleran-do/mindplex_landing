@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getQuarterData } from "../../utils/getQuarterData.astro";
 
 const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
-const roadmapContent = await getQuarterData("Q1");
+const roadmapContent = await getQuarterData("Q4_2023");
 ---
 
 <Layout title="roadmap">
@@ -14,8 +14,13 @@ const roadmapContent = await getQuarterData("Q1");
         class="absolute -top-10 flex flex-row justify-evenly w-full md:-top-14"
       >
         {
-          roadmapVersion.map((version) => {
+          roadmapVersion.map((version, index) => {
+            // console.log(index);
             const { id, title, backgroundColor, color } = version.frontmatter;
+            if (index >= 3) {
+              return;
+            }
+
             return (
               <div>
                 <div>
@@ -24,7 +29,7 @@ const roadmapContent = await getQuarterData("Q1");
                   </h3>
                 </div>
 
-                <a href={`roadmap/${id}`}>
+                <a href={`roadmap/${id}_${index}`}>
                   <div
                     class={`${backgroundColor} w-14 h-14 rounded-full opacity-20 relative`}
                   />
