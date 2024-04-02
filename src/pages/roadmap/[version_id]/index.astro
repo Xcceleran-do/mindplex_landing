@@ -10,11 +10,36 @@ let startid = parseInt(id) - 1;
 
 let endid = startid + 4;
 
-type VersionId = "Q4_2023" | "Q2_2024" | "Q4_2025";
+type VersionId =
+  | "Q1_2023"
+  | "Q2_2023"
+  | "Q3_2023"
+  | "Q4_2023"
+  | "Q1_2024"
+  | "Q2_2024"
+  | "Q3_2024"
+  | "Q4_2024"
+  | "Q1_2025"
+  | "Q2_2025"
+  | "Q3_2025"
+  | "Q4_2025";
 
 function validateVersionId(versionId: string | undefined): VersionId {
   if (!versionId) return "Q4_2023";
-  const validVersions: VersionId[] = ["Q4_2023", "Q2_2024", "Q4_2025"];
+  const validVersions: VersionId[] = [
+    "Q1_2023",
+    "Q2_2023",
+    "Q3_2023",
+    "Q4_2023",
+    "Q1_2024",
+    "Q2_2024",
+    "Q3_2024",
+    "Q4_2024",
+    "Q1_2025",
+    "Q2_2025",
+    "Q3_2025",
+    "Q4_2025",
+  ];
   if (validVersions.includes(versionId.toUpperCase() as VersionId)) {
     return versionId.toUpperCase() as VersionId;
   }

@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { getQuarterData } from "../../utils/getQuarterData.astro";
 
 const roadmapVersion = await Astro.glob("../../content/roadmapVersions/*.md");
+console.log(roadmapVersion);
 const roadmapContent = await getQuarterData("Q4_2023");
 ---
 
