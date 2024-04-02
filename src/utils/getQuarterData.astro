@@ -1,11 +1,32 @@
 ---
 export const getQuarterData = async (
-  quarter: "Q4_2023" | "Q2_2024" | "Q4_2025"
+  quarter:
+    | "Q1_2023"
+    | "Q2_2023"
+    | "Q3_2023"
+    | "Q4_2023"
+    | "Q1_2024"
+    | "Q2_2024"
+    | "Q3_2024"
+    | "Q4_2024"
+    | "Q1_2025"
+    | "Q2_2025"
+    | "Q3_2025"
+    | "Q4_2025"
 ) => {
   const globs = {
-    Q4_2023: Astro.glob("../content/roadmap/Q1/*.md"),
-    Q2_2024: Astro.glob("../content/roadmap/Q3/*.md"),
-    Q4_2025: Astro.glob("../content/roadmap/Q4/*.md"),
+    Q1_2023: Astro.glob("../content/roadmap/Q1_2023/*.md"),
+    Q2_2023: Astro.glob("../content/roadmap/Q2_2023/*.md"),
+    Q3_2023: Astro.glob("../content/roadmap/Q3_2023/*.md"),
+    Q4_2023: Astro.glob("../content/roadmap/Q4_2023/*.md"),
+    Q1_2024: Astro.glob("../content/roadmap/Q1_2024/*.md"),
+    Q2_2024: Astro.glob("../content/roadmap/Q2_2024/*.md"),
+    Q3_2024: Astro.glob("../content/roadmap/Q3_2024/*.md"),
+    Q4_2024: Astro.glob("../content/roadmap/Q4_2024/*.md"),
+    Q1_2025: Astro.glob("../content/roadmap/Q1_2025/*.md"),
+    Q2_2025: Astro.glob("../content/roadmap/Q2_2025/*.md"),
+    Q3_2025: Astro.glob("../content/roadmap/Q3_2025/*.md"),
+    Q4_2025: Astro.glob("../content/roadmap/Q4_2025/*.md"),
   };
 
   try {
