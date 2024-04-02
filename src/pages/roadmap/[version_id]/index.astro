@@ -6,9 +6,9 @@ const { version_id } = Astro.params;
 
 let versionId = version_id?.slice(0, -2);
 let id: string | any = version_id?.charAt(version_id.length - 1);
-let startid = parseInt(id);
+let startid = parseInt(id) - 1;
 
-let endid = startid + 3;
+let endid = startid + 4;
 
 type VersionId = "Q4_2023" | "Q2_2024" | "Q4_2025";
 
@@ -40,7 +40,7 @@ const roadmapVersion = await Astro.glob(
           roadmapVersion.map((version, index) => {
             let opacity = 25;
             const { id, title, backgroundColor, color } = version.frontmatter;
-            version_id == id ? (opacity = 100) : (opacity = 25);
+            startid + 1 == index ? (opacity = 100) : (opacity = 25);
             console.log(title, index);
             if (index >= endid || startid > index) {
               return;
