@@ -1,0 +1,12 @@
+---
+import content from "./content.md?raw";
+import { marked } from "marked";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="campaign">
+  <div
+    class="prose prose-invert prose-a:text-cyan-700 lg:prose-xl mx-auto mb-10"
+    set:html={marked(content)}
+  />
+</Layout>
